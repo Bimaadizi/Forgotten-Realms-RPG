@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgotten Realms System Prompts</title>
     <style>
+	
+        body {
+            margin: 0; /* Removes default margin */
+            height: 100vh; /* Sets the body height to the viewport height */
+            background-image: url('back.png'); /* Path to your image */
+            background-size: contain; /* Ensures the whole image is visible */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Centers the image in the viewport */
+            background-attachment: fixed; /* Keeps the background image static during scroll */
+        }
+	
         borg {
             color: black;
-            font-size: 20px;
+            font-size: 26px;
             font-family: Arial, sans-serif;
+			text-align: left;
         }
         body {
             font-family: Arial, sans-serif;
@@ -70,13 +82,24 @@
             border: 1px solid #ccc;
         }
         .copy-button img {
-            width: 150px;
+            width: 250px;
         }
 		
 		body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+			//centering
+			.centered-container 
+			{
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Horizontally center */
+    justify-content: center; /* Vertically center */
+    min-height: 100vh; /* Make the container take up the full viewport height */
+    margin: 0 auto; /* Center horizontally if needed */
+}
+
 }
 
 /* Header container styles */
@@ -107,6 +130,28 @@
         font-size: 5vw; /* Slightly larger text for small screens */
     }
 }
+// Center
+html, body {
+    height: 100%; /* Ensure the container can take full height */
+    margin: 0;    /* Remove default margins */
+    padding: 0;   /* Remove default padding */
+    box-sizing: border-box; /* Consistent box model */
+}
+.centered-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    justify-content: flex-start; /* Keep items at the top */
+    max-width: 800px; /* Responsive max width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 20px; /* Responsive side padding */
+    text-align: left; /* Align text inside to the left */
+    box-sizing: border-box; /* Includes padding in width */
+}
+
+
+
+
 
     </style>
     <script>
@@ -136,18 +181,20 @@
 <body>
     <header class="header-container">
         <img src="RPG.png" alt="Forgotten Realms RPG" class="header-image">
-
-    </header>
+	
+	
+	
+	<div class="centered-container">
 <borg>This is a collection of system prompts for my Forgotten Realms Janitor.AI prompt.
 <br><br>
 Using a system prompt can help correct mistakes that Janitor AI makes and steer the responses you get to be more desirable.
 <br><br>
 I have created a couple of stock system prompts for you to use. Simply select the one you want (If unsure, select DEFAULT) and copy it into Janitor.ai.
 <br><br>
-Below are some dropdown boxes, click/press them to open them up, they will show the respective system prompt for that mode and at the bottom is a "COPY SYSTEM PROMPT" button that will automatically add it to your clipboard.
-
+Below are some dropdown boxes, click/press them to open them up, they will show the respective system prompt
 <br><br>
 </borg>
+</div>
 
 <div class="dropdown">
     <div class="dropdown-header" onclick="toggleDropdown('dropdown1')">
@@ -356,6 +403,26 @@ At the end of each message include the user’s inventory with this: Inventory(T
     <header class="header-container">
         <img src="Guide.png" alt="Janitor.AI guide" class="header-image">
 
+	<div class="centered-container">
+<borg>Below are some modules that you can add to your system to add more features, including inventory, dicerolls, better shopping, etc. Copy and paste these into whatever system prompt you use to integrate these mechanics (Some sysprompts, like Grognard Mode and Baldur's Gate mode already implement some of these.) <br><br> Also note that these are prone to breaking, and may require additional handholding. <br><br>
+<br><br> Inventory (By @Ori13 on Discord)<br><br>At the end of each message include the user’s inventory with this: Inventory(Two new lines, then write "Inventory: ". On the same line, list the items in {{user}}'s inventory. The inventory will be based on the roleplay. If {{user}} gained items, it will be added to anything that was already in {{user}}'s inventory from the previous message. If {{user}} didn't gain or lose anything, then the inventory should be exactly the same as the previous message. Money can be combined into a single entry in the inventory.)
+<br><br> Better Shops <br><br> [Permanent System Instruction: Shops: When {{user}} enters a shop, do not worldbuild or set the scene, and list out the wares in the shopkeepers inventory and their price, also list out {{user}}s gold amount, and {{user}}s inventory that he can sell items from. If the user doesn’t have enough money do not let him get it without haggling/bartering or thievery. Base this on Baldur’s Gate’s shopkeep system.]
+<br><br> D20 Rolls (Broken asf) <br><br> [FUNCTIONS: Dice rolls: You will use a D20 decision to make decisions, when actions occur where a dice roll is necessary (Anything that would count as a check for Luck, Charisma, Deception, Observation, Strength, Agility, Intellect, Wisdom, Dexterity, Lore, Constitution), and then add modifiers depending on if the situation is in their favour, some checks will be harder than others and will have a higher threshold. . Before doing your action, you will do the following equation: D20 Roll = X, + (Modifier)=D (End result). A high Z means a better result, and a low Z means a worse result. A 1 is a critical fail and should result in a horrible, almost comically bad result, a D20 should be extremely good and successful, and should result in the best possible result. A D10 is a good base line for a success threshold. Use this D20 feature OFTEN and any time the user tries to use one of their skills ESPECIALLY if they explicitly state it’s a skill check. ALWAYS do the dice roll BEFORE generating your message, the dice roll should be random and change how the rest of the message is proceeded. The duce roll should happen at the BEGINNING of a message. DO NOT favor the user in your dice rolls, always be random, it can be a devastating defeat.]
+<br>-------------------------------------------------
+<br><br><br><br> Also, here is a link to the custom made Forgotten Realms RPG playlist, if you'd like to view it. I recommend using shuffle and adblock with it. <br><br>
+<a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID&shuffle=1" target="_blank">FORGOTTEN REALMS RPG OST (click me!!!!)</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+(:
+
+</div>
+
     </header>
+	
+	
 </body>
 </html>
