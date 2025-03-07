@@ -429,7 +429,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Adds your party to the bottom of each message to make it more reliable and remember your party members, some modules reference this module (Health and Levels module). This used to be part of the bot however JLLM has become worse at keeping track, so I removed it from the base bot. This is recommended for JLLM</td>
+                <td>Adds your party to the bottom of each message to make it more reliable and remember your party members, some modules reference this module (Health and Levels module). This used to be part of the bot however JLLM has become worse at keeping track, so I removed it from the base bot. This is recommended for JLLM [TOKENS: 147]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -456,7 +456,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Keeps track of the items in your inventory, which allows for integration into the narrative, interactions with NPCs, and more reliable tracking of the story. Works well with JLLM.</td>
+                <td>Keeps track of the items in your inventory, which allows for integration into the narrative, interactions with NPCs, and more reliable tracking of the story. Works well with JLLM. [TOKENS: 182]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -483,7 +483,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>When entering a shop, you will be prompted to [BROWSE WARES], opening an interface for buying and selling items. Works with JLLM but prone to breaking over time.</td>
+                <td>When entering a shop, you will be prompted to [BROWSE WARES], opening an interface for buying and selling items. Works with JLLM but prone to breaking over time. [TOKENS: 297]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -518,6 +518,7 @@ th, td {
 				<br>- 🌄 = Evening
 				<br>- 🌙 = Night
 				<br>- 🌌 = Midnight
+				<br> [TOKENS: 157]
  </td>
             </tr>
             <tr>
@@ -545,7 +546,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Implements a journal feature, adding a small log at the end of each message. Type [JOURNAL] to view recent entries to your journal. Acts as a reminder for the user and to help center the AI when telling what quests are ongoing, prone to inconsistancy and breaking especially on JLLM.</td>
+                <td>Implements a journal feature, adding a small log at the end of each message. Type [JOURNAL] to view recent entries to your journal. Acts as a reminder for the user and to help center the AI when telling what quests are ongoing, prone to inconsistancy and breaking especially on JLLM. [TOKENS: 123]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -572,7 +573,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Reputation is an older DnD mechanic featured in various 3.5e settings and the Baldur's Gate (1&2) games. At the end of all your messages is your reputation and should be updated as you do good or bad things. Prone to freezing, works okay on JLLM.</td>
+                <td>Reputation is an older DnD mechanic featured in various 3.5e settings and the Baldur's Gate (1&2) games. At the end of all your messages is your reputation and should be updated as you do good or bad things. Prone to freezing, works okay on JLLM. [TOKENS: 216]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -599,7 +600,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Adds fatigue mechanics, requiring you to rest and applying debuffs to you when you are not well rested, works okay on JLLM, prone to poor pacing, freezing, or the AI forgetting it. Synergizes with the Time module.</td>
+                <td>Adds fatigue mechanics, requiring you to rest and applying debuffs to you when you are not well rested, works okay on JLLM, prone to poor pacing, freezing, or the AI forgetting it. Synergizes with the Time module. [TOKENS: 193]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -628,11 +629,11 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Incorporates dice roll mechanics to the AI, NOT recommended for JLLM, JLLM will forget about it, fairly token heavy, and typically has biases favoring the user especially on JLLM (if it works at all). D20 mechanics are finnicky even on proxies..</td>
+                <td>Incorporates dice roll mechanics to the AI, NOT recommended for JLLM, JLLM will forget about it, fairly token heavy, and typically has biases favoring the user especially on JLLM (if it works at all). [TOKENS: 305]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell18">[PERMANENT SYSTEM INSTRUCTIONS: USE D20 ROLLS WHEN RELEVANT TO DECIDE OUTCOME. DO NOT FAVOR USER]<br>### Dice<br>### Purpose: To provide randomness to the story. Should not be biased and should have varied results.<br>### Function<br>- Use a D20 system, randomly generating a number between 1-20. Display the result to the user<br>- If the user is at an advantage/disadvantage in check, include a modifier (add +X or -X). Include the + or - when displaying the result to the user<br>- Use dice rolls for checks if related to: Perception, Deception, Dexterity, intelligence, Wisdom, Charisma, Strength, Athletics.<br>- ALWAYS include the dice roll before writing what happens<br>- ALWAYS do a D20 check when necessary<br>- Do not favor the user, be unbiased. Give a random number.<br>- A 20 or higher is a critical success, and should be especially or comically good<br>- A 1 or lower is a critical failure, and should be especially or comically bad.
+                <td id="cell18">### Dice<br>[PERMANENT SYSTEM INSTRUCTIONS: USE D20 ROLLS WHEN RELEVANT TO DECIDE OUTCOME. DO NOT FAVOR USER]<br>#### Purpose: To provide randomness to the story. Should not be biased and should have varied results<br>#### Function<br>- Use a D20 system, randomly generating a number between 1-20. Display the result to the user<br>- D20 rolls can be used for saving rolls<br>- Add positive or negative modifiers (+X/-X) depending on the users situation, skill, or stats<br>- If doing an ‘advantage roll’, roll 2 dice and pick the highest one<br>- If the user is at an advantage/disadvantage in check, include a modifier (add +X or -X) Include the + or - when displaying the result to the user<br>- Example of a Dice displaying: [(SKILL) CHECK: Dice Roll + Modifier]<br>- Use dice rolls for checks if related to: Perception, Deception, Dexterity, Intelligence, Wisdom, Charisma, Strength, Athletics<br>- ALWAYS include the dice roll before writing what happens<br>- ALWAYS do a D20 check when necessary<br>- Do not favor the user, be unbiased. Give a random number<br>- A natural 20 (excluding modifiers) is a ‘critical success’, and should be especially or comically good<br>- A natural 1 is a critical failure, and should be especially or comically bad
 </td>
             </tr>
         </table>
@@ -655,7 +656,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td> Incorporates health mechanics into the game, this prompt makes references to the Level, D20 (For death saving throw) and Party module, but aren't necessary. May encounter issues with JLLM and the math not adding up. This prompt is not recommended for JLLM due to math.</td>
+                <td> Incorporates health mechanics into the game, this prompt makes references to the Level, D20 (For death saving throw) and Party module, but aren't necessary. May encounter issues with JLLM and the math not adding up. This prompt is not recommended for JLLM due to math. [TOKENS: 171]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -682,7 +683,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Incorporates Levels and Exp mechanics, References Levels & Stats modules, and is useless without at least one of the two. Not recommended for JLLM due to math.</td>
+                <td>Incorporates Levels and Exp mechanics, References Levels & Stats modules, and is useless without at least one of the two. Not recommended for JLLM due to math. [TOKENS: 81]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -695,25 +696,26 @@ th, td {
         </div>
     </div>
 </div>
-<!--
+
 <div class="dropdown">
     <div class="dropdown-header" onclick="toggleDropdown('dropdown17')">
-        <span class="dropdown-text">Modules</span>
+        <span class="dropdown-text">Stats</span>
         <span class="dropdown-arrow">&#9662;</span>
     </div>
     <div id="dropdown17" class="dropdown-content">
         <table>
             <tr>
                 <td>Name</td>
-                <td>placeholder</td>
+                <td>Stats</td>
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>placeholder</td>
+                <td>Incorporates Stats module, synergizes with Levels module, prone to not being updated after levelling up, prone to being pushed aside in D20 Rolls. [TOKENS: 100]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell17">placeholderx</td>
+                <td id="cell17">### Stats<br>- At the bottom of each message, list the user's stats for:<br>- STR=Strength, DEX=Dexterity, CON=Constitution, INT=Intelligence, WIS=Wisdom, CHA=Charisma.<br>- List the abbreviated version and its level.<br>- Higher = Better (Level 20 is the cap), Lower level = Worse (Level 1 is lowest).<br>- Stats will affect user performance and lead to dice roll modifiers.
+</td>
             </tr>
         </table>
         <div class="copy-button" onclick="copyToClipboard('cell17')">
@@ -721,8 +723,7 @@ th, td {
         </div>
     </div>
 </div>
--->
-<!-- blah! -->
+
 
 <div class="dropdown">
     <div class="dropdown-header" onclick="toggleDropdown('dropdown19')">
@@ -737,7 +738,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Adds combat mechanics using classic RPG fighting mechanics, There is currently not another variant of this though I might add a more cinematic/narrative combat prompt. Prone to breaking, token heavy, fairly complex, may experience issues even on proxies.</td>
+                <td>Adds combat mechanics using classic RPG fighting mechanics, There is currently not another variant of this though I might add a more cinematic/narrative combat prompt. Prone to breaking, token heavy, fairly complex, may experience issues even on proxies. [TOKENS: 324]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
