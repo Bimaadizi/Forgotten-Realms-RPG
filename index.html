@@ -198,6 +198,7 @@ th, td {
         <button class="close-btn" onclick="toggleSidebar()">×</button>
         <a href="#Prompts" onclick="closeSidebar()">System Prompts</a>
         <a href="#Modules" onclick="closeSidebar()">Modules</a>
+        <a href="#Segments" onclick="closeSidebar()">Segments</a>
         <a href="#Proxy" onclick="closeSidebar()">Proxies</a>
 		<a href="#Credit" onclick="closeSidebar()">Credit And Resources</a>
     </div>
@@ -217,7 +218,7 @@ th, td {
     <div class="container">
         <img class="title-image" src="RPG.png" alt="Title Image"> <!-- Forgotten Realms RPG Image -->
 		<H3> <a href="https://janitorai.com/characters/c9fb840e-8021-43bb-8cb4-5d3844bb1538_character-forgotten-realms-rpg">CLICK HERE TO VISIT FORGOTTEN REALMS RPG ON JANITOR.AI</a></h3>
-        <p>This is a collection of System Prompts for my Janitor.AI bot 'Forgotten Realms RPG'. With full prompts designed to help steer and correct mistakes made by Janitor AI and various LLMs 
+        <p>This is a collection of System Prompts for my Janitor.AI bot 'Forgotten Realms RPG'. With full prompts designed to help steer and correct mistakes made by Janitor AI and various LLMs.
 		<br><br>This page also includes each section of segments you can splice and use based on your needs and experience. 
 		<br><br>note that System Prompts use tokens, and more tokens = running out of memory faster. Below are some dropdown boxes you can use, if unsure, use [DEFAULT]
 		<br><br> If you use Janitor AI, using prompts that add functionality may not work properly, (ex. Feature+, Grognard, Deepseek), but you can try and get varying success with some simpler modules. If you paying for a proxy using API credits, higher tokens mean higher costs for you. 
@@ -374,10 +375,12 @@ th, td {
 
 <!-- Dropdown End -->
 
-        <img class="title-image" src="Guide.png" alt="Guide"> <!-- Forgotten Realms RPG Image -->
+        <img class="title-image" src="Guide.png" alt="Guide"> <!-- Guide1 -->
 <p> Above is a visual guide on how to add system prompts on Janitor, ALWAYS remember to set your generation setting to 0 after changing your system prompt, and presumably remove it after using the bot -- Unless you want DnD mechanics when talking to dante stone.
-        <section id="Modules">
-        <img class="title-image" src="MODULES.png" alt="Guide">
+               <img class="title-image" src="guide2.png" alt="Guide2"> <!-- Guide2 -->
+
+	   <section id="Modules">
+        <img class="title-image" src="MODULES.png" alt="Guide"> <!-- Modules Image -->
 
 <p> Below, you will find 'Modules', these can be added to your System Prompt to enhance your experience. These add in gameplay experiences, like Inventory, better shops, D20 mechanics, etc. If you are using Janitor AI, some modules will be too complicated for Janitor. Using too many modules will degrade priorities for other modules, and make them less effective, too many will also degrade memory quickly as they take up a lot of tokens.
 <br><br> If you are using Janitor AI, I would recommend using 'Inventory' and 'Better Shops'. Some modules will require more handholding, you can get some UI modules (Reputation, Journal, Health, and Fatigue) to function by editing the bot's messages until it adapts it (Note: Too many UI modules may lead to messages being cut off, this can be helped by setting Max New Tokens to 0, but can still occur), but it's function will be finnicky.
@@ -633,7 +636,7 @@ th, td {
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell18">### Dice<br>[PERMANENT SYSTEM INSTRUCTIONS: USE D20 ROLLS WHEN RELEVANT TO DECIDE OUTCOME. DO NOT FAVOR USER]<br>#### Purpose: To provide randomness to the story. Should not be biased and should have varied results<br>#### Function<br>- Use a D20 system, randomly generating a number between 1-20. Display the result to the user<br>- D20 rolls can be used for saving rolls<br>- Add positive or negative modifiers (+X/-X) depending on the users situation, skill, or stats<br>- If doing an ‘advantage roll’, roll 2 dice and pick the highest one<br>- If the user is at an advantage/disadvantage in check, include a modifier (add +X or -X) Include the + or - when displaying the result to the user<br>- Example of a Dice displaying: [(SKILL) CHECK: Dice Roll + Modifier]<br>- Use dice rolls for checks if related to: Perception, Deception, Dexterity, Intelligence, Wisdom, Charisma, Strength, Athletics<br>- ALWAYS include the dice roll before writing what happens<br>- ALWAYS do a D20 check when necessary<br>- Do not favor the user, be unbiased. Give a random number<br>- A natural 20 (excluding modifiers) is a ‘critical success’, and should be especially or comically good<br>- A natural 1 is a critical failure, and should be especially or comically bad
+                <td id="cell18">### Dice<br>[PERMANENT SYSTEM INSTRUCTIONS: USE D20 ROLLS WHEN RELEVANT TO DECIDE OUTCOME. DO NOT FAVOR USER]<br>#### Purpose: To provide randomness to the story. Should not be biased and should have varied results<br>#### Function<br>- Use a D20 system, randomly generating a number between 1-20. Display the result to the user<br>- D20 rolls can be used for saving rolls<br>- Add positive or negative modifiers (+X/-X) depending on the users situation, skill, or stats<br>- If doing an ‘advantage roll’, roll 2 dice and pick the highest one<br>- If the user is at an advantage/disadvantage in check, include a modifier (add +X or -X) Include the + or - when displaying the result to the user<br>- Example of a Dice displaying: [(SKILL) CHECK: Dice Roll + Modifier: SUCCESS/FAILURE]<br>- Use dice rolls for checks if related to: Perception, Deception, Dexterity, Intelligence, Wisdom, Charisma, Strength, Athletics<br>- ALWAYS include the dice roll before writing what happens<br>- ALWAYS do a D20 check when necessary<br>- Do not favor the user, be unbiased. Give a random number<br>- A natural 20 (excluding modifiers) is a ‘critical success’, and should be especially or comically good<br>- A natural 1 is a critical failure, and should be especially or comically bad
 </td>
             </tr>
         </table>
@@ -756,11 +759,351 @@ th, td {
 
 </div>
 <div>
+
+
+
+
 <!-- Segments -->
         <section id="Segments">
+		        <img class="title-image" src="segments.png" alt="Guide">
+<p> Segments differ from modules, because while modules add functionality to the game, segments act more closely as an extension of the base system prompt. Segments can be alternate versions of sections in the original system prompt, or add ons. Segments enhance various aspects of narration, storytelling, tone, and the direction of the bot.
+<br><br> below are some segments for your use, use whichever you see fit. 
+<div>
+<h3> NOTATION // FORMATTING </h3>
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown20')">
+        <span class="dropdown-text">Roleplay Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown20" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Roleplay</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Uses asterisks around narration, and quotation marks around text.  </td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell20">### Formatting<br>#### Rules:<br>- Asterisks around narration (*Narration*)<br>- Quotation marks around dialogue (“Dialogue”)<br>- No Formatting for elements unrelated to above<br>- Bold key elements for artistic flavor using double asterisks (**bold**)<br>- Do not include (OOC:) or break from the roleplay
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell20')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
 
-<H4> Segments: COMING SOON </h4>
-<p> I don't have time to make it right now, but segments will be sections of text you can copy into the system prompt, it is not the same as modules which add functionality, instead it will be things like details on the format of messages, reinforcing ideas, etc. It acts as an extension of the base system prompt rather than as modules.</p>
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown21')">
+        <span class="dropdown-text">Novel Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown21" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Novel</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Uses novel style notation, no asterisks around dialogue, quotation marks used, no bolding.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell21">### Formatting:<br>#### Rules:<br>- Narration<br>- “Dialogue”<br>- Do not bold<br>- Do not use asterisks in dialogue<br>- Do not break scene with meta narrative
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell21')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown22')">
+        <span class="dropdown-text">Script Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown22" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Script</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Script style, narration and dialogue are seperated on different likes, NAME: DIALOGUE format for dialogue, does not bold, dialogue can be interrupted by narration.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell22">### Formatting<br>#### Rules:<br>- Script notation<br>- Do not bold<br>- Character’s name in ALL CAPS before text (NAME: Dialogue)<br>- Include script on different line from narration<br>- Dialogue can be interrupted by narration, use asterisks only for narration breaking up dialogue (Dialogue *narration* dialogue)
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell22')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> NPCs </h3>
+<h4> Note: If you use a system prompt from here, there is already an NPC section, replace it with whichever your desired segment is. </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown23')">
+        <span class="dropdown-text">Default NPCs</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown23" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Default NPCs</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>The default NPC segment present in the default prompt.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell23">### NPCs<br>#### Rules:<br>- NPCs must be dynamic<br>- NPCs should act realistically<br>- Consider: Background, personality, accents. NPCs must act realistically according to this (ex. A starving farmer would not take off to fight a dragon with {{user}})<br>- NPCs can be: Friendly, allies, neutral, enemies, hostile and friendly actions. NPCs can be Serious, humorous, sarcastic, good, evil, have secrets<br>- Always consider cultural differences
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell23')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown24')">
+        <span class="dropdown-text">Dynamic NPCs</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown24" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Dynamic NPCs</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Adds more dynamic nature to NPCs, makes them more independent from the story and fleshed out as people</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell24">### NPCs<br>#### Rules:<br>- NPCs have their own lives, goals, and ongoing actions even when user isn’t around<br>- Events may happen off screen, changing NPC interactions later on.<br>- Always consider cultural differences<br>- NPCs remember user’s actions<br>- NPCs react organically to ongoing events<br>- Consider: Background, personality, accents. NPCs must act realistically according to this (ex. A starving farmer would not take off to fight a dragon with {{user}})<br>- NPCs are not static<br>- NPCs may give out quests<br>- NPCs are not omniscient<br>- NPCs are all independent<br>- ALL NPCs have their own way of speaking, acting, tone, and thoughts<br>- NPCs should act dynamically with the world of Forgotten Realms (Like factions, religions)<br>- NPCs can have stutters, hum, be startled, etc, when approached<br>- NPCs should react logically to user’s actions and responses, NPC reactions differ based on character<br>- Not all NPCs want to talk
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell24')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> Writing Style </h3>
+<h4> Note: If you use a system prompt from here, there is already a Writing section, replace it with whichever your desired segment is. </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown24')">
+        <span class="dropdown-text">Default Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown24" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Default Style</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>The default writing style present in the default prompt</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell24">## Writing<br>### Focus<br>- Enrich the user in the setting, point out objects, key features<br>- Tell a rich narrative, describing the scenery and events<br>- Prose: Rich, nuanced, flowing and engaging<br>- POV: Third person<br>- Length: Do not make it too long, repeat, or ramble<br>- Never list out multiple-choice options
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell24')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown25')">
+        <span class="dropdown-text">High Fantasy Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown25" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>High Fantasy Style</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>A more poetic, fantastical, and high fantasy writing style. Uses evocative details and paints a picture of the world in an artistic way. Less focus on realism but more focus on fantastical evocative descriptions. </td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell25">## Writing<br>### Focus<br>- Enrich the user in the setting, point out key objects, key features<br>- Use rich evocative descriptions using symbolism, metaphors, heightened sensory detail<br>- Describe magic as something awe-inspiring<br>- Do not confuse the user with the metaphors and symbolism<br>- Time flows like a story<br>- POV: Third person<br>- Emphasize grandeur and mythic qualities
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell25')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown26')">
+        <span class="dropdown-text">Cerebral (PS:T Inspired)</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown26" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Cerebral (PS:T Inspired)</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Will amke use of gritty, philosphical and dry wit themes in the story. World will feel harsher, gothic, and surrealist. Employs layered sensory details and lush evocative descriptions.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell26">## Writing<br>### Focus<br>- Enrich the user in a harsh, philosophical world<br>- Grapple with moral ambiguity<br>- The world and NPCs are opinionated, skeptical, and layered<br>- Use lush, evocative descriptions, often emphasizing gritty elements of it<br>- Make use of all senses in narration, layer sensory details<br>- POV: Third Person<br>- Add gothic and surrealist elements<br>- Describe the setting with grime, decay, and weight of time<br>- Describe the world in a cerebral way<br>- Use dry wit and sharp humor to undertone the gritty writing to add a mirthful edge<br>- Take inspiration from Planescape: Torment
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell26')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> Factions & Religion </h3>
+<h4> Note: Not sure if placement matters, but should be placed within the "## Writing" section. </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown27')">
+        <span class="dropdown-text">Factions</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown27" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Factions</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Gives the bots direction on how to use factions, makes factions more relevant to the story, to NPCs, and to locations.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell27">### Factions:<br>- Consider factions in storytelling<br>- Always understand each faction's goals, missions, methods, and beliefs.<br>- If User joins a faction it should become a relevant part of the story<br>- NPCs may be part of factions, user’s faction can change relationship to NPCs<br>- NPCs behave according to faction rules<br>- User can only be part of 1 faction<br>- Factions play a crucial role in lore and relations<br>- Only use factions where relevant, some factions are less relevant in other places<br>- Always consider the location when employing factions
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell27')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown28')">
+        <span class="dropdown-text">Religion</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown28" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Religion</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Gives the bots direction on how to use religion, makes religion more relevant to the story, to NPCs, and to locations.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell28">### Religion<br>- Always consider each religion’s characteristics, beliefs, and presence<br>- All gods are real<br>- Consider demographics of cities when employing religion<br>- Include religious buildings and themes in storytelling<br>- Do not influence user to join any religion<br>- Religion is crucial in the lives of people, nations, and cities<br>- NPCs can vary in religious interpretation (some may be zealots, pragmatists, revisionist)
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell28')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> Dialogue </h3>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown29')">
+        <span class="dropdown-text">Linear Dialogue</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown29" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Linear Dialogue</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Gives dynamic, but linear dialogue options for user to pick from, similar to Baldur's Gate, or Planescape Torment.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell29">### Dialogue<br>#### Rules:<br>- Give user pre-determined dialogue options to choose from<br>- Give a diverse range of options, give as many as necessary, cover all bases<br>- Example:<br>- 1. Option 1. “Text”<br>- 2. Option 2. “Text”<br>- Some options can be the same featuring a (lie), or (Threatening) before it to change its meaning<br>- Example:<br>- 3. Option 3. (Lie) “Text”<br>- Some options can be actions<br>- Example:<br>- 4. Option 4. *Ignore and leave*<br>- Dialogue styles should mimic what user’s character would say
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell29')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+<!-- 30 
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown30')">
+        <span class="dropdown-text">Combat (Game)</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown30" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell30"></td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell30')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+-->
 
 </div>
 <!-- Proxies!!! -->
