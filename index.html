@@ -199,6 +199,7 @@ th, td {
         <a href="#Prompts" onclick="closeSidebar()">System Prompts</a>
         <a href="#Modules" onclick="closeSidebar()">Modules</a>
         <a href="#Segments" onclick="closeSidebar()">Segments</a>
+        <a href="#Persona" onclick="closeSidebar()">Persona</a>
         <a href="#Proxy" onclick="closeSidebar()">Proxies</a>
 		<a href="#Credit" onclick="closeSidebar()">Credit And Resources</a>
     </div>
@@ -925,7 +926,7 @@ th, td {
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell31">### NPCs<br>#### Rules:<br>- NPCs serve clear roles in the world<br>- NPCs should elucidate lore, quests, plot, etc.<br>- NPCs can give out quests<br>- NPCs can play into archetypes (Grizzled Barkeep, pretentious noble)<br>- Shopkeeps will give user ‘gossip’ when buying multiple pints of alcohol, that may be relevant or irrelevant<br>- Do not make NPCs feel too flat<br>- NPCs can have stutters, hum, be startled, etc, when approached
+                <td id="cell31">### NPCs<br>#### Rules:<br>- NPCs serve clear roles in the world<br>- NPCs should elucidate lore, quests, plot, etc.<br>- NPCs can give out quests<br>- NPCs can play into archetypes (Grizzled Barkeep, pretentious noble)<br>- Shopkeeps will give user ‘gossip’ when buying multiple pints of alcohol, that may be relevant or irrelevant<br>- Avoid making NPCs feel too flat<br>- NPCs can have stutters, hum, be startled, etc, when approached
 
 </td>
             </tr>
@@ -957,7 +958,7 @@ th, td {
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell69">## Writing<br>### Focus<br>- Enrich the user in the setting, point out objects, key features<br>- Tell a rich narrative, describing the scenery and events<br>- Prose: Rich, nuanced, flowing and engaging<br>- POV: Third person<br>- Length: Do not make it too long, repeat, or ramble<br>- Never list out multiple-choice options
+                <td id="cell69">## Writing<br>### Focus<br>- Enrich the user in the setting, point out objects, key features<br>- Tell a rich narrative, describing the scenery and events<br>- Prose: Rich, nuanced, flowing and engaging<br>- POV: Third person<br>- Length: avoid making it too long, repeat, or ramble<br>- Never list out multiple-choice options
 </td>
             </tr>
         </table>
@@ -1136,6 +1137,36 @@ th, td {
         </div>
     </div>
 </div>
+
+<!-- Personas -->
+        <section id="Persona">
+
+<div>
+		        <img class="title-image" src="Persona.png" alt="Guide">
+
+<p> A persona can help an AI grasp your character better in this roleplay, when you add a persona it is added to your 'Permanent Tokens' which the AI will constantly have access to. Do note however, that since personas are permanent tokens this means that it will degrade your bot's memory particularly if you are using JLLM.
+<br><br> Using a Persona is an optional decision that can improve the bot's understanding of your character. Generally the AI can remember the gist of your character as it is reinforced throughout the messages or stored in the 'PARTY' module. You can not switch personas mid-chat, so you may want to make one prior to using the bot. If you have a preferred persona that you play constantly with this bot or other bots, then I would recommend making a Persona for it. <p>
+<br><br> Below is a template you can use. Press the 'Copy Persona Template' button to copy it. You can modify it as you wish, try to keep it below 200 tokens. <br><br> </p>
+                <td>Persona</td>
+                <td id="cellpers">Name= <br>
+Gender=<br>
+Age= (Optional, typically irrelevant in roleplay.)<br>
+Race=<br>
+Class=<br>
+Religion= <br>
+Background= (What you did prior to the events of the bot.)<br>
+Nationality= (Where your character is from.)<br>
+Affiliation(s) = (If you're a member of an organization, like the Harpers, include it here.)
+Appearance= (Physical appearance of your character)<br>
+Outfit= (Optional, since outfit can change over the course of the bot, like getting new armour.)<br>
+Goals= (Optional, keep vague unless you have an idea for what your roleplay will be beforehand.)<br>
+Alignment= (Optional, alignment isn't as relevant as it used to be and can box your character in. I like using alignment in this bot to guide the bot.)<br>
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cellpers')">
+            <img src="Copy2.png" alt="Copy">
+        </div>
 
 
 </div>
