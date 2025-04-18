@@ -139,9 +139,7 @@
     #sidebar {
         left: -100%;
 		
-		
-		<!-- Image buttons !!-->
-		
+				
 		.img-button {
 		   text-decoration: none;
 			background: none;
@@ -177,6 +175,7 @@
   <a href="#Modules" onclick="closeSidebar()">Modules</a>
   <a href="#Segments" onclick="closeSidebar()">Segments</a>
   <a href="#Persona" onclick="closeSidebar()">Persona</a>
+  <a href="#Tips" onlclick=closesidebar() ">Tips & Recommendations</a>
   <a href="#Proxy" onclick="closeSidebar()">Proxies</a>
   <a href="#Credit" onclick="closeSidebar()">Credit And Resources</a>
   
@@ -247,9 +246,9 @@
       <span>▼</span>
     </div>
     <div class="section1">
-      <p>This is the standard system prompt for RPGs. If you are not using Deepseek, remove everything underneath <span style="color: blue; font-weight: bold;">'## Validation Check'</span> to save Tokens. 
-	  <br><span style="color: red; font-weight: bold;">TOKEN COUNT (ESTIMATE) JANITOR: [~499 TOKENS] (562 WITH VALIDATION CHECK)</span>
-	  <br><span style="color: purple; font-weight: bold;">TOKEN COUNT (ESTIMATE) DEEPSEEK: [~495 TOKENS]</span></p>
+      <p>This is the standard system prompt for RPGs. If you are not using Deepseek R1 (JLLM, V3, or other non-reasoner proxy), remove everything underneath <span style="color: blue; font-weight: bold;">'## Validation Check'</span> to save Tokens. 
+	  <br><span style="color: red; font-weight: bold;">TOKEN COUNT (ESTIMATE) JANITOR: [~610 TOKENS] (547 WITHOUT VALIDATION CHECK)</span>
+	  <br><span style="color: purple; font-weight: bold;">TOKEN COUNT (ESTIMATE) DEEPSEEK: [~585 TOKENS] (534 WITHOUT VALIDATION CHECKS)</span></p>
     </div>
     <div class="section2">
       <p>Setting = Forgotten Realms
@@ -274,7 +273,7 @@
 
 ### Narrative:
 
-- Enrich {{user}} experience as protagonist by detailing the setting, surroundings, events, and key features.
+- Enrich {{user}} experience by detailing the setting, surroundings, events, and key features.
 - Focus pacing, avoid overcrowding scenes with excessive events.
 - POV: Third Person.
 - Each sentence serves a clear narrative purpose. Avoid repetition and rambling.
@@ -1090,7 +1089,7 @@ Write engaging and dynamic fight scenes. The GameMaster handles the enemy's acti
 	
 											      	        <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
-    <span style="font-weight: bold;">LINEAR DIALOGUE</span>      <span>▼</span>
+    <span style="font-weight: bold;">MAX/MIN PARAGRAPHS</span>      <span>▼</span>
     </div>
     <div class="section1" style="display: none;">
       <p> Adds minimum/maximum paragraph instructions to contain AI's responses to a certain size, can be adjusted based on preference. Replace X and Y with desired variables
@@ -1148,8 +1147,242 @@ Alignment= (Optional, alignment isn't as relevant as it used to be and can box y
   </button>
 </div>
 </div>
-							
-							
+
+<!-- TIPS -->
+					        <section id="Tips">
+
+					<img src="tips.png" alt="tips" class="image">
+
+
+	<p> <span style="color: green; font-weight: bold;">Preventing the AI from speaking for you.</span>
+	<br><br>&nbsp; &nbsp; At any point in your story, adding in (OOC: Do not speak for {{user}} at any point) can help to redirect it. Your first few messages with the bot are very important for how it proceeds, it is very important not to let it speak for you (Or make major decisions as the protagonist) within the first few messages.
+	<br><br>
+	<span style="color: green; font-weight: bold;">The AI keeps inventing fictional locations/cities/establishments</span>
+	<br><br>&nbsp; &nbsp; Unfortunately, this happens when your story takes place or travels to a more niche location in the Forgotten Realms. You will have to guide the AI along, like by saying the name of the city/town and perhaps give details on it in your message that the AI can work with.
+	<br><br>
+	<span style="color: green; font-weight: bold;">The AI keeps defaulting to Baldur's Gate/Waterdeep/Amn/Popular locations</span>
+	<br><br>&nbsp; &nbsp; Same as above, you have to handhold the AI a little bit to give it your travel itinerary so that the locations it goes to are reasonable and geographically logical.
+	<br><br>
+	<span style="color: green; font-weight: bold;">My bot's memory has gotten really bad!</span>
+	<br><br>&nbsp; &nbsp; First thing to try is to reduce the token count of your system prompt. If the Character is token heavy, and the system prompt is heavy (Along with a Persona, or Chat Memory) then you will have very few tokens to use for memory. You can also upgrade to a proxy with a higher context. 
+	<br><br> One thing you can try is to use the Chat Memory feature. Using a custom format can also greatly help. Tell the AI to pause roleplay and fill out the below form: 
+
+<div class="container" data-state="open">
+    <div class="header" onclick="toggleContainer(this)">
+          <span style="font-weight: bold;">Chat Memory Template</span>      <span>▼</span>
+
+    </div>
+    <div class="section1">
+      <p>In a message, say to the bot something along the lines of (OOC: Pause roleplay and fill out the following forum recapping the events of the story. Reply with 200 tokens.)</p>
+    </div>
+    <div class="section2">
+      <p># Story:
+[Notes + any scenario changes go here]
+
+# Relationship Dynamic:
+[CHARNAME and PERSONANAME have a TYPE relationship marked by A, B and C.]
+
+# Current Plot Points:
+- EVENT1: BRIEFDESCRIPTION
+- EVENT2: BRIEFDESCRIPTION
+- etc.
+
+# COMPANION Notes (Fill this out for each companion, if none, remove section): 
+- Current mood: [mood]
+- Inventory: [items]
+- Outfits: [outfit details]
+- Ailments: [ailments]
+- etc.
+
+# PERSONANAME Notes:
+- Current mood: [mood]
+- Inventory: [items]
+- Outfits: [outfit details]
+- Ailments: [ailments]
+- etc.
+
+# Important Past Events:
+- EVENT1: BRIEFDESCRIPTION
+- EVENT2: BRIEFDESCRIPTION
+- etc.
+
+# Key Words:
+[add general keywords for your rp]
+
+# AI Instruction:
+[add any prompts, writing instructions (if applicable)].
+</p>
+    </div>
+<div class="copy-section">
+  <button class="copy-btn" onclick="copySection(this)">
+    <img src="copy2.png" alt="Copy Button" style="max-height: 120px;">
+  </button>
+</div>
+</div>
+<p> The above forum will help to give both a more detailed chat memory, as well as reduce the amount of Tokens it's using. This bot is my slightly edited prompt or <a href="https://cheesey-wizards-organization.gitbook.io/masterlist/prompts-and-troubleshooting/general-advice">Cheese's slightly edited prompt</a> of <a href="https://rentry.co/astarya_guide#long-roleplay-using-chat-memory">Astarya's chat memory template</a>. You can also fill out the form yourself if you find the AI isn't being detailed enough or missing key elements.
+<br><br>
+				<span style="color: green; font-weight: bold;">My bot's memory is still really bad!</span>
+<br><br> It is time to start a new chat — but your story does not have to end! The 'Chat Transplant Method' is a great way to restart your chat with the bot. See u/funfatale's guide on it <a href="https://cheesey-wizards-organization.gitbook.io/masterlist/prompts-and-troubleshooting/general-advice">here</a>
+				</p>
+						<h2> <span style="color: RED; font-weight: bold;">WRITING STYLES!</span> </h2>
+				<p>
+						Something very cool that you can do with deepseek to enhance it's writing is to tell it to mimic a certain style. You cna see various examples <a href="https://rentry.org/deepstyles"> here </a> which features various authors, directors, media, and even another AI model, Claude. It's very good at mimicing writing styles and can give a general sense of direction. I highly recommend it.
+						<br><br> To have deepseek use another writing style, simply type <span style="color: RED; font-weight: bold;">"(OOC: Mimic the writing style of ______ in your messages)"</span>. In the following dropdown boxes, you can see me demo it in my bot.
+
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">NO WRITING STYLE</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>This is just Deepseek-R1 with no writing style instructions, using the default system prompt.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="ExampleDefault.png" alt="Default example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Planescape Torment</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of Planescape Torment) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="ExamplePlanescape.png" alt="Planescape example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Baldur's Gate</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of Baldur's Gate 1&2) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="ExampleBaldursGate.png" alt="Baldurs Gate example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Disco Elysium</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of Disco Elysium) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="DiscoExample.png" alt="DE Example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Ed Greenwood</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of Ed Greenwood) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="GreenwoodExample.png" alt="Greenwood Example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">R.A Salvatore</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of R. A salvatore) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="ExampleRASalvatore.png" alt="RASalvatore example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">David Lynch</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of David Lynch) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="LynchExample.png" alt="Lynch Example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Filippo Marinetti</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of Filippo Marinetti) at the end of my message. (I find this one very cool)
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="MarinettiExample.png" alt="Marinetti Example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Franz Kafka</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of Franz Kafka) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="KafkaExample.png" alt="Kafka Example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+<p> It is very easy to add various writing styles, and I implore you to experiment with writers that you enjoy. Telling the AI to mimic a writer helps the AI to feel more narrative and capture prose better. One downside is that it's going to try and stick to themes of that writing style which can prevent it from capturing a broader array of experiences. Regardless, I think this enhances the experience.</p>
+				<h3> <a href="https://cheesey-wizards-organization.gitbook.io/masterlist/prompts-and-troubleshooting/troubleshooting"> For additional information, visit Cheese's Troubleshooting page. It has a lot of great tips. </a></h3>
+
+
+
+
+
+
+
+
 							
 					        <section id="Proxy">
 <h2> PROXIES </h2>
