@@ -9,12 +9,13 @@
         body {
             background-image: url('back.png'); /* Replace with your background image */
             background-size: cover;
+			background-attachment: fixed;
             font-family: Arial, sans-serif;
             text-align: center;
             color: black;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
 			margin:auto;
             padding: 40px;
             text-align: left;
@@ -25,7 +26,7 @@
             max-width: 600px;
 			display: block; margin: 0 auto; 
         }
-        }
+        
         .dropdown {
             margin-bottom: 20px;
         }
@@ -197,7 +198,10 @@ th, td {
         <button class="close-btn" onclick="toggleSidebar()">×</button>
         <a href="#Prompts" onclick="closeSidebar()">System Prompts</a>
         <a href="#Modules" onclick="closeSidebar()">Modules</a>
+        <a href="#Segments" onclick="closeSidebar()">Segments</a>
+        <a href="#Persona" onclick="closeSidebar()">Persona</a>
         <a href="#Proxy" onclick="closeSidebar()">Proxies</a>
+		<a href="#Credit" onclick="closeSidebar()">Credit And Resources</a>
     </div>
 
     <!-- Button to open sidebar -->
@@ -214,7 +218,9 @@ th, td {
 <body>
     <div class="container">
         <img class="title-image" src="RPG.png" alt="Title Image"> <!-- Forgotten Realms RPG Image -->
-        <p>This is a collection of System Prompts for my Janitor.AI bot 'Forgotten Realms RPG'. With full prompts designed to help steer and correct mistakes made by Janitor AI and various LLMs 
+		<H3> <a href="https://janitorai.com/characters/c9fb840e-8021-43bb-8cb4-5d3844bb1538_character-forgotten-realms-rpg">CLICK HERE TO VISIT FORGOTTEN REALMS RPG ON JANITOR.AI</a></h3>
+		<H3> <a href="https://bimaadizi.github.io/Forgotten-Realms-RPG/Builder">bimaadizi.github.io/Forgotten-Realms-RPG/Builder</a> VISIT THE CONVENIENT BUILDER, Simply check the modules you want and it will build your System Prompt for you.</h3>
+        <p>This is a collection of System Prompts for my Janitor.AI bot 'Forgotten Realms RPG'. With full prompts designed to help steer and correct mistakes made by Janitor AI and various LLMs.
 		<br><br>This page also includes each section of segments you can splice and use based on your needs and experience. 
 		<br><br>note that System Prompts use tokens, and more tokens = running out of memory faster. Below are some dropdown boxes you can use, if unsure, use [DEFAULT]
 		<br><br> If you use Janitor AI, using prompts that add functionality may not work properly, (ex. Feature+, Grognard, Deepseek), but you can try and get varying success with some simpler modules. If you paying for a proxy using API credits, higher tokens mean higher costs for you. 
@@ -322,7 +328,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td></td>
+                <td>The default system prompt with a few modules included. This system prompt features: Inventory, Better Shops, Party, Reputation, Journal, and Time. These prompts are generally friendly with JLLM, but may require handholding to work properly. [TOKENS 1532]  </td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -371,10 +377,12 @@ th, td {
 
 <!-- Dropdown End -->
 
-        <img class="title-image" src="Guide.png" alt="Guide"> <!-- Forgotten Realms RPG Image -->
+        <img class="title-image" src="Guide.png" alt="Guide"> <!-- Guide1 -->
 <p> Above is a visual guide on how to add system prompts on Janitor, ALWAYS remember to set your generation setting to 0 after changing your system prompt, and presumably remove it after using the bot -- Unless you want DnD mechanics when talking to dante stone.
-        <section id="Modules">
-        <img class="title-image" src="MODULES.png" alt="Guide">
+               <img class="title-image" src="guide2.png" alt="Guide2"> <!-- Guide2 -->
+
+	   <section id="Modules">
+        <img class="title-image" src="MODULES.png" alt="Guide"> <!-- Modules Image -->
 
 <p> Below, you will find 'Modules', these can be added to your System Prompt to enhance your experience. These add in gameplay experiences, like Inventory, better shops, D20 mechanics, etc. If you are using Janitor AI, some modules will be too complicated for Janitor. Using too many modules will degrade priorities for other modules, and make them less effective, too many will also degrade memory quickly as they take up a lot of tokens.
 <br><br> If you are using Janitor AI, I would recommend using 'Inventory' and 'Better Shops'. Some modules will require more handholding, you can get some UI modules (Reputation, Journal, Health, and Fatigue) to function by editing the bot's messages until it adapts it (Note: Too many UI modules may lead to messages being cut off, this can be helped by setting Max New Tokens to 0, but can still occur), but it's function will be finnicky.
@@ -399,7 +407,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>This is the module that enables modules, modules work without it but this defines what modules are for the AI and makes them more consistent.</td>
+                <td>This is the module that enables modules, modules work without it but this defines what modules are for the AI and makes them more consistent. [TOKENS: 100]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -426,7 +434,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Adds your party to the bottom of each message to make it more reliable and remember your party members, some modules reference this module (Health and Levels module). This used to be part of the bot however JLLM has become worse at keeping track, so I removed it from the base bot. This is recommended for JLLM</td>
+                <td>Adds your party to the bottom of each message to make it more reliable and remember your party members, some modules reference this module (Health and Levels module). This used to be part of the bot however JLLM has become worse at keeping track, so I removed it from the base bot. This is recommended for JLLM [TOKENS: 147]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -453,7 +461,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Keeps track of the items in your inventory, which allows for integration into the narrative, interactions with NPCs, and more reliable tracking of the story. Works well with JLLM.</td>
+                <td>Keeps track of the items in your inventory, which allows for integration into the narrative, interactions with NPCs, and more reliable tracking of the story. Works well with JLLM. [TOKENS: 182]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -480,7 +488,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>When entering a shop, you will be prompted to [BROWSE WARES], opening an interface for buying and selling items. Works with JLLM but prone to breaking over time.</td>
+                <td>When entering a shop, you will be prompted to [BROWSE WARES], opening an interface for buying and selling items. Works with JLLM but prone to breaking over time. [TOKENS: 297]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -515,6 +523,7 @@ th, td {
 				<br>- 🌄 = Evening
 				<br>- 🌙 = Night
 				<br>- 🌌 = Midnight
+				<br> [TOKENS: 157]
  </td>
             </tr>
             <tr>
@@ -542,7 +551,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Implements a journal feature, adding a small log at the end of each message. Type [JOURNAL] to view recent entries to your journal. Acts as a reminder for the user and to help center the AI when telling what quests are ongoing, prone to inconsistancy and breaking especially on JLLM.</td>
+                <td>Implements a journal feature, adding a small log at the end of each message. Type [JOURNAL] to view recent entries to your journal. Acts as a reminder for the user and to help center the AI when telling what quests are ongoing, prone to inconsistancy and breaking especially on JLLM. [TOKENS: 123]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -569,7 +578,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Reputation is an older DnD mechanic featured in various 3.5e settings and the Baldur's Gate (1&2) games. At the end of all your messages is your reputation and should be updated as you do good or bad things. Prone to freezing, works okay on JLLM.</td>
+                <td>Reputation is an older DnD mechanic featured in various 3.5e settings and the Baldur's Gate (1&2) games. At the end of all your messages is your reputation and should be updated as you do good or bad things. Prone to freezing, works okay on JLLM. [TOKENS: 216]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -596,7 +605,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Adds fatigue mechanics, requiring you to rest and applying debuffs to you when you are not well rested, works okay on JLLM, prone to poor pacing, freezing, or the AI forgetting it. Synergizes with the Time module.</td>
+                <td>Adds fatigue mechanics, requiring you to rest and applying debuffs to you when you are not well rested, works okay on JLLM, prone to poor pacing, freezing, or the AI forgetting it. Synergizes with the Time module. [TOKENS: 193]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -625,11 +634,11 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Incorporates dice roll mechanics to the AI, NOT recommended for JLLM, JLLM will forget about it, fairly token heavy, and typically has biases favoring the user especially on JLLM (if it works at all). D20 mechanics are finnicky even on proxies..</td>
+                <td>Incorporates dice roll mechanics to the AI, NOT recommended for JLLM, JLLM will forget about it, fairly token heavy, and typically has biases favoring the user especially on JLLM (if it works at all). [TOKENS: 305]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell18">[PERMANENT SYSTEM INSTRUCTIONS: USE D20 ROLLS WHEN RELEVANT TO DECIDE OUTCOME. DO NOT FAVOR USER]<br>### Dice<br>### Purpose: To provide randomness to the story. Should not be biased and should have varied results.<br>### Function<br>- Use a D20 system, randomly generating a number between 1-20. Display the result to the user<br>- If the user is at an advantage/disadvantage in check, include a modifier (add +X or -X). Include the + or - when displaying the result to the user<br>- Use dice rolls for checks if related to: Perception, Deception, Dexterity, intelligence, Wisdom, Charisma, Strength, Athletics.<br>- ALWAYS include the dice roll before writing what happens<br>- ALWAYS do a D20 check when necessary<br>- Do not favor the user, be unbiased. Give a random number.<br>- A 20 or higher is a critical success, and should be especially or comically good<br>- A 1 or lower is a critical failure, and should be especially or comically bad.
+                <td id="cell18">### Dice<br>[PERMANENT SYSTEM INSTRUCTIONS: USE D20 ROLLS WHEN RELEVANT TO DECIDE OUTCOME. DO NOT FAVOR USER]<br>#### Purpose: To provide randomness to the story. Should not be biased and should have varied results<br>#### Function<br>- Use a D20 system, randomly generating a number between 1-20. Display the result to the user<br>- D20 rolls can be used for saving rolls<br>- Add positive or negative modifiers (+X/-X) depending on the users situation, skill, or stats<br>- If doing an ‘advantage roll’, roll 2 dice and pick the highest one<br>- If the user is at an advantage/disadvantage in check, include a modifier (add +X or -X) Include the + or - when displaying the result to the user<br>- Example of a Dice displaying: [(SKILL) CHECK: Dice Roll + Modifier: SUCCESS/FAILURE]<br>- Use dice rolls for checks if related to: Perception, Deception, Dexterity, Intelligence, Wisdom, Charisma, Strength, Athletics<br>- ALWAYS include the dice roll before writing what happens<br>- ALWAYS do a D20 check when necessary<br>- Do not favor the user, be unbiased. Give a random number<br>- A natural 20 (excluding modifiers) is a ‘critical success’, and should be especially or comically good<br>- A natural 1 is a critical failure, and should be especially or comically bad
 </td>
             </tr>
         </table>
@@ -652,7 +661,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td> Incorporates health mechanics into the game, this prompt makes references to the Level, D20 (For death saving throw) and Party module, but aren't necessary. May encounter issues with JLLM and the math not adding up. This prompt is not recommended for JLLM due to math.</td>
+                <td> Incorporates health mechanics into the game, this prompt makes references to the Level, D20 (For death saving throw) and Party module, but aren't necessary. May encounter issues with JLLM and the math not adding up. This prompt is not recommended for JLLM due to math. [TOKENS: 171]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -679,7 +688,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Incorporates Levels and Exp mechanics, References Levels & Stats modules, and is useless without at least one of the two. Not recommended for JLLM due to math.</td>
+                <td>Incorporates Levels and Exp mechanics, References Levels & Stats modules, and is useless without at least one of the two. Not recommended for JLLM due to math. [TOKENS: 81]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -692,25 +701,26 @@ th, td {
         </div>
     </div>
 </div>
-<!--
+
 <div class="dropdown">
     <div class="dropdown-header" onclick="toggleDropdown('dropdown17')">
-        <span class="dropdown-text">Modules</span>
+        <span class="dropdown-text">Stats</span>
         <span class="dropdown-arrow">&#9662;</span>
     </div>
     <div id="dropdown17" class="dropdown-content">
         <table>
             <tr>
                 <td>Name</td>
-                <td>placeholder</td>
+                <td>Stats</td>
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>placeholder</td>
+                <td>Incorporates Stats module, synergizes with Levels module, prone to not being updated after levelling up, prone to being pushed aside in D20 Rolls. [TOKENS: 100]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
-                <td id="cell17">placeholderx</td>
+                <td id="cell17">### Stats<br>- At the bottom of each message, list the user's stats for:<br>- STR=Strength, DEX=Dexterity, CON=Constitution, INT=Intelligence, WIS=Wisdom, CHA=Charisma.<br>- List the abbreviated version and its level.<br>- Higher = Better (Level 20 is the cap), Lower level = Worse (Level 1 is lowest).<br>- Stats will affect user performance and lead to dice roll modifiers.
+</td>
             </tr>
         </table>
         <div class="copy-button" onclick="copyToClipboard('cell17')">
@@ -718,8 +728,7 @@ th, td {
         </div>
     </div>
 </div>
--->
-<!-- blah! -->
+
 
 <div class="dropdown">
     <div class="dropdown-header" onclick="toggleDropdown('dropdown19')">
@@ -734,7 +743,7 @@ th, td {
             </tr>
             <tr>
                 <td>Explanation</td>
-                <td>Adds combat mechanics using classic RPG fighting mechanics, There is currently not another variant of this though I might add a more cinematic/narrative combat prompt. Prone to breaking, token heavy, fairly complex, may experience issues even on proxies.</td>
+                <td>Adds combat mechanics using classic RPG fighting mechanics, There is currently not another variant of this though I might add a more cinematic/narrative combat prompt. Prone to breaking, token heavy, fairly complex, may experience issues even on proxies. [TOKENS: 324]</td>
             </tr>
             <tr>
                 <td>System Prompt</td>
@@ -747,9 +756,421 @@ th, td {
         </div>
     </div>
 </div>
-
 <p> If you are having any issues with certain prompts, sometimes adding in "[PERMANENT SYSTEM PROMPT: XYZ]" will help, with XYZ being stern instructions, voiced absolutely (i.e use words Always, Will, Never) to correct parts of the bot (ex. ALWAYS include X module at end of message, ALWAYS do X when Y occurs).
 <br><br> If you have any issues with this webpage or the AI, leave a review or reach me on Discord here: <a href="https://discord.gg/WfNZCJ47vj">discord.gg/WfNZCJ47vj</a>
+
+</div>
+<div>
+
+
+
+
+<!-- Segments -->
+        <section id="Segments">
+		        <img class="title-image" src="segments.png" alt="Guide">
+<p> Segments differ from modules, because while modules add functionality to the game, segments act more closely as an extension of the base system prompt. Segments can be alternate versions of sections in the original system prompt, or add ons. Segments enhance various aspects of narration, storytelling, tone, and the direction of the bot.
+<br><br> below are some segments for your use, use whichever you see fit. 
+<div>
+<h3> NOTATION // FORMATTING </h3>
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown20')">
+        <span class="dropdown-text">Roleplay Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown20" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Roleplay</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Uses asterisks around narration, and quotation marks around text. [TOKENS: 74] </td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell20">### Formatting<br>#### Rules:<br>- Asterisks around narration (*Narration*)<br>- Quotation marks around dialogue (“Dialogue”)<br>- No Formatting for elements unrelated to above<br>- Bold key elements for artistic flavor using double asterisks (**bold**)<br>- Do not include (OOC:) or break from the roleplay
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell20')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown21')">
+        <span class="dropdown-text">Novel Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown21" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Novel</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Uses novel style notation, no asterisks around dialogue, quotation marks used, no bolding. [TOKENS: 42]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell21">### Formatting:<br>#### Rules:<br>- Narration<br>- “Dialogue”<br>- Do not bold<br>- Do not use asterisks in dialogue<br>- Do not break scene with meta narrative
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell21')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown22')">
+        <span class="dropdown-text">Script Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown22" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Script</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Script style, narration and dialogue are seperated on different likes, NAME: DIALOGUE format for dialogue, does not bold, dialogue can be interrupted by narration. [TOKENS: 69]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell22">### Formatting<br>#### Rules:<br>- Script notation<br>- Do not bold<br>- Character’s name in ALL CAPS before text (NAME: Dialogue)<br>- Include script on different line from narration<br>- Dialogue can be interrupted by narration, use asterisks only for narration breaking up dialogue (Dialogue *narration* dialogue)
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell22')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> NPCs </h3>
+<h4> Note: If you use a system prompt from here, there is already an NPC section, replace it with whichever your desired segment is. </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown23')">
+        <span class="dropdown-text">Default NPCs</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown23" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Default NPCs</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>The default NPC segment present in the default prompt. [TOKENS: 94]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell23">### NPCs<br>#### Rules:<br>- NPCs must be dynamic<br>- NPCs should act realistically<br>- Consider: Background, personality, accents. NPCs must act realistically according to this (ex. A starving farmer would not take off to fight a dragon with {{user}})<br>- NPCs can be: Friendly, allies, neutral, enemies, hostile and friendly actions. NPCs can be Serious, humorous, sarcastic, good, evil, have secrets<br>- Always consider cultural differences
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell23')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown24')">
+        <span class="dropdown-text">Dynamic NPCs</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown24" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Dynamic NPCs</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Adds more dynamic nature to NPCs, makes them more independent from the story and fleshed out as people. [TOKENS: 209]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell24">### NPCs<br>#### Rules:<br>- NPCs have their own lives, goals, and ongoing actions even when user isn’t around<br>- Events may happen off screen, changing NPC interactions later on.<br>- Always consider cultural differences<br>- NPCs remember user’s actions<br>- NPCs react organically to ongoing events<br>- Consider: Background, personality, accents. NPCs must act realistically according to this (ex. A starving farmer would not take off to fight a dragon with {{user}})<br>- NPCs are not static<br>- NPCs may give out quests<br>- NPCs are not omniscient<br>- NPCs are all independent<br>- ALL NPCs have their own way of speaking, acting, tone, and thoughts<br>- NPCs should act dynamically with the world of Forgotten Realms (Like factions, religions)<br>- NPCs can have stutters, hum, be startled, etc, when approached<br>- NPCs should react logically to user’s actions and responses, NPC reactions differ based on character<br>- Not all NPCs want to talk
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell24')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown31')">
+        <span class="dropdown-text">Classic NPCs</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown31" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Classic NPCs</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Adds a classic RPG experience to NPCs, NPCs can play into archetypes and play a role in moving forward the lore, story, and narration.</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell31">### NPCs<br>#### Rules:<br>- NPCs serve clear roles in the world<br>- NPCs should elucidate lore, quests, plot, etc.<br>- NPCs can give out quests<br>- NPCs can play into archetypes (Grizzled Barkeep, pretentious noble)<br>- Shopkeeps will give user ‘gossip’ when buying multiple pints of alcohol, that may be relevant or irrelevant<br>- Avoid making NPCs feel too flat<br>- NPCs can have stutters, hum, be startled, etc, when approached
+
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell31')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+
+<h3> Writing Style </h3>
+<h4> Note: If you use a system prompt from here, there is already a Writing section, replace it with whichever your desired segment is. </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown69')">
+        <span class="dropdown-text">Default Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown69" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Default Style</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>The default writing style present in the default prompt. [TOKENS: 76]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell69">## Writing<br>### Focus<br>- Enrich the user in the setting, point out objects, key features<br>- Tell a rich narrative, describing the scenery and events<br>- Prose: Rich, nuanced, flowing and engaging<br>- POV: Third person<br>- Length: avoid making it too long, repeat, or ramble<br>- Never list out multiple-choice options
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell69')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown25')">
+        <span class="dropdown-text">High Fantasy Style</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown25" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>High Fantasy Style</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>A more poetic, fantastical, and high fantasy writing style. Uses evocative details and paints a picture of the world in an artistic way. Less focus on realism but more focus on fantastical evocative descriptions. [TOKENS: 84] </td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell25">## Writing<br>### Focus<br>- Enrich the user in the setting, point out key objects, key features<br>- Use rich evocative descriptions using symbolism, metaphors, heightened sensory detail<br>- Describe magic as something awe-inspiring<br>- Do not confuse the user with the metaphors and symbolism<br>- Time flows like a story<br>- POV: Third person<br>- Emphasize grandeur and mythic qualities
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell25')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown26')">
+        <span class="dropdown-text">Cerebral (PS:T Inspired)</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown26" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Cerebral (PS:T Inspired)</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Will make use of gritty, philosphical and dry wit themes in the story. World will feel harsher, gothic, and surrealist. Employs layered sensory details and lush evocative descriptions. [TOKENS: 139]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell26">## Writing<br>### Focus<br>- Enrich the user in a harsh, philosophical world<br>- Grapple with moral ambiguity<br>- The world and NPCs are opinionated, skeptical, and layered<br>- Use lush, evocative descriptions, often emphasizing gritty elements of it<br>- Make use of all senses in narration, layer sensory details<br>- POV: Third Person<br>- Add gothic and surrealist elements<br>- Describe the setting with grime, decay, and weight of time<br>- Describe the world in a cerebral way<br>- Use dry wit and sharp humor to undertone the gritty writing to add a mirthful edge<br>- Take inspiration from Planescape: Torment
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell26')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> Factions & Religion </h3>
+<h4> Note: Not sure if placement matters, but should be placed within the "## Writing" section. </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown27')">
+        <span class="dropdown-text">Factions</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown27" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Factions</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Gives the bots direction on how to use factions, makes factions more relevant to the story, to NPCs, and to locations. [TOKENS: 116]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell27">### Factions:<br>- Consider factions in storytelling<br>- Always understand each faction's goals, missions, methods, and beliefs.<br>- If User joins a faction it should become a relevant part of the story<br>- NPCs may be part of factions, user’s faction can change relationship to NPCs<br>- NPCs behave according to faction rules<br>- User can only be part of 1 faction<br>- Factions play a crucial role in lore and relations<br>- Only use factions where relevant, some factions are less relevant in other places<br>- Always consider the location when employing factions
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell27')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown28')">
+        <span class="dropdown-text">Religion</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown28" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Religion</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Gives the bots direction on how to use religion, makes religion more relevant to the story, to NPCs, and to locations. [TOKENS: 89]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell28">### Religion<br>- Always consider each religion’s characteristics, beliefs, and presence<br>- All gods are real<br>- Consider demographics of cities when employing religion<br>- Include religious buildings and themes in storytelling<br>- Do not influence user to join any religion<br>- Religion is crucial in the lives of people, nations, and cities<br>- NPCs can vary in religious interpretation (some may be zealots, pragmatists, revisionist)
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell28')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> Dialogue </h3>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown29')">
+        <span class="dropdown-text">Linear Dialogue</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown29" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Linear Dialogue</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Gives dynamic, but linear dialogue options for user to pick from, similar to Baldur's Gate, or Planescape Torment. [TOKENS: 147]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell29">### Dialogue<br>#### Rules:<br>- Give user pre-determined dialogue options to choose from<br>- Give a diverse range of options, give as many as necessary, cover all bases<br>- Example:<br>- 1. Option 1. “Text”<br>- 2. Option 2. “Text”<br>- Some options can be the same featuring a (lie), or (Threatening) before it to change its meaning<br>- Example:<br>- 3. Option 3. (Lie) “Text”<br>- Some options can be actions<br>- Example:<br>- 4. Option 4. *Ignore and leave*<br>- Dialogue styles should mimic what user’s character would say
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell29')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<h3> Minimum/Maximum Paragraphs </h3>
+<h4> Note: Replace X and Y with desired size </h4>
+
+<div class="dropdown">
+    <div class="dropdown-header" onclick="toggleDropdown('dropdown30')">
+        <span class="dropdown-text">Message Size</span>
+        <span class="dropdown-arrow">&#9662;</span>
+    </div>
+    <div id="dropdown30" class="dropdown-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Message Size</td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>Adds minimum/Maximum paragraph to contain AI to a certain size. Can be adjusted based on preference and avoid AI from being cut off. Replace X and Y with desired variables. [TOKENS: ~24]</td>
+            </tr>
+            <tr>
+                <td>System Prompt</td>
+                <td id="cell30">### Size<br>- Min Paragraphs: X<br>- Max Paragraphs: Y<br>- Never exceed these sizes
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell30')">
+            <img src="Copy.png" alt="Copy">
+        </div>
+    </div>
+</div>
+
+<!-- Personas -->
+        <section id="Persona">
+
+<div>
+		        <img class="title-image" src="Persona.png" alt="Guide">
+
+<p> A persona can help an AI grasp your character better in this roleplay, when you add a persona it is added to your 'Permanent Tokens' which the AI will constantly have access to. Do note however, that since personas are permanent tokens this means that it will degrade your bot's memory particularly if you are using JLLM.
+<br><br> Using a Persona is an optional decision that can improve the bot's understanding of your character. Generally the AI can remember the gist of your character as it is reinforced throughout the messages or stored in the 'PARTY' module. You can not switch personas mid-chat, so you may want to make one prior to using the bot. If you have a preferred persona that you play constantly with this bot or other bots, then I would recommend making a Persona for it. <p>
+<br><br> Below is a template you can use. Press the 'Copy Persona Template' button to copy it. You can modify it as you wish, try to keep it below 200 tokens. <br><br> </p>
+        <table>      
+			  <td>Persona Template</td>
+                <td id="cell111">
+Name=<br>
+Gender=<br>
+Age= (Optional, typically irrelevant in roleplay.)<br>
+Race=<br>
+Class=<br>
+Religion= <br>
+Background= (What you did prior to the events of the bot.)<br>
+Nationality= (Where your character is from.)<br>
+Affiliation(s) = (If you're a member of an organization, like the Harpers, include it here.)
+Appearance= (Physical appearance of your character)<br>
+Outfit= (Optional, since outfit can change over the course of the bot, like getting new armour.)<br>
+Goals= (Optional, keep vague unless you have an idea for what your roleplay will be beforehand.)<br>
+Alignment= (Optional, alignment isn't as relevant as it used to be and can box your character in. I like using alignment in this bot to guide the bot.)<br>
+</td>
+            </tr>
+        </table>
+        <div class="copy-button" onclick="copyToClipboard('cell111')">
+            <img src="Copy2.png" alt="Copy">
+        </div>
+
 
 </div>
 <!-- Proxies!!! -->
@@ -800,10 +1221,20 @@ th, td {
 <br><br> Recommended: Set Max Token Generation to 0 in Janitor AI's generation settings (This will be reset each time you update your proxy info, including system prompt updates.)
 <br><br><br> If you encounter any errors, ensure everything is entered correctly, you may have entered it in wrong, accidentally left a character in, a space at the end.
 </p>
-
+        <section id="Credit">
 </div>
+<h2> BIG THANKS AND CREDIT TO: </h2>
 
-
+<h4> Large parts of my prompts, as well as the structure and format, were taken from @saturnines on Discord, You can view Saturines prompts here:
+<p>Their Gitbook, containing deepseek R1 prompts: <a href="https://cheesey-wizards-organization.gitbook.io/masterlist"> cheesey-wizards-organization.gitbook.io/masterlist</a>
+<br><br>Their thread on the Janitor AI Discord regarding Deepseek prompts: <a href="https://discord.com/channels/563783473115168788/1338407356567916564"> discord.com/channels/563783473115168788/1338407356567916564</a>
+</h4>
+<p> I recommend visiting their gitbook, as it has resources/assets that can help improve the performance of the bot, the markdown format they use works with mine (Since that's where I got it from). They have a module's page that is currently work in progress, extra modules available there.
+<br><br> Extra resources:
+<br><br> Cheesey Wizard's modules: <a href="https://cheesey-wizards-organization.gitbook.io/masterlist/prompts-and-troubleshooting/publish-your-docs/modules"> cheesey-wizards-organization.gitbook.io/masterlist/prompts-and-troubleshooting/publish-your-docs/modules</a>
+<br> Sprout (@hydw_i)'s discord thread on Deepseek Prompts: <a href="https://discord.com/channels/563783473115168788/1338209950958354452"> discord.com/channels/563783473115168788/1338209950958354452</a>
+<br> Mar's Prompts: <a href="https://rentry.co/MarPrompt"> rentry.co/MarPrompt</a>
+<br><br> If you create your own modules, let me know and I can update this page with them, if you have any ideas for modules let me know. I can be reached on Discord at: <a href="https://discord.gg/WfNZCJ47vj">discord.gg/WfNZCJ47vj</a>. I also do not know anything about system prompts, if you can enhance some of my prompts, give me formatting advice, correct me on any misunderstandings I have, or anything else. I would greatly appreciate it.
 
 
 
