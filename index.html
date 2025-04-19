@@ -663,7 +663,7 @@ Heroic: 16-20
 	  <br>     → Deepseek will take a minute to generate your message, since it has to do the math. You can make it faster by editing the instruction to only check the first and last letters, or first and last words, or any variation. However I have tested and these are less random but faster.
 	  <br>     → The numbers after your roll is the seed, this is included to force the AI to do the math instead of bypass it. If this stops being relatively consistent the module has broken.
 	  <br>     → Advantage rolls are IMPOSSIBLE, since both die would be the same.
-	  
+	  <br>     → Diversifying the opening and/or closing line of your prompt can prevent repeated results, it shouldn't be a big deal unless you always open and end with the same 2/3 words since the entropy can vary even if the number is relatively close. Alternatively, you can add a line saying '- Exclude common/repeated words when solving for X'.
 	  <br><br> Anyways. Give me feedback on this prompt if you use it, it's a bit experimental but I've seen success in my tests.
 	  <br><br>
 	  <br>-> This module is referenced in: [HEALTH], [COMBAT], [STATS]
@@ -679,7 +679,8 @@ Heroic: 16-20
 
 - When appropriate, use a D20 roll. Always do this in reasoning, never skip it.
 - Sum all ascii values of the first 2 and last 3 words in user's entire message. If the user has begun a message with these words before, exclude them. This is X
-- mod X by 20 (Y % 20)+1, this is Z.
+- Identify how common the first and last letters are, add that value to X, this is Y
+- mod Y by 20 (Y % 20)+1, this is Z.
 - Z is the result of a D20 roll.
 - Add positive or negative modifiers (+X/-X) based on user's situation, skill, or stats.
 - You will use D20 rolls whenever necessary, the presence of this prompt indicates the user enjoys D20 rolls and enjoys their usage.
