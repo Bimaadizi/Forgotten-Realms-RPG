@@ -907,29 +907,41 @@ Write engaging and dynamic fight scenes. The GameMaster handles the enemy's acti
 	  </p>
     </div>
     <div class="section2" style="display: none;">
-      <p> #Link
+      <p> 
+
+
+
+<pre>
+#Link
 &lt;Link&gt;
 - At the end of all messages you will add a link. Here is a template:
-https://bimaadizi.github.io/F/?name=Joe&race=Human&class=Fighter&level=1&hp=100&str=7&dex=7&con=7&int=7&wis=7&cha=7
+bimaadizi.github.io/F/?name=Joe&amp;race=Human&amp;class=Fighter&amp;level=1-&amp;hp=100&amp;str=7-&amp;dex=7-&amp;con=7-&amp;int=7-&amp;wis=7-&amp;cha=-7
 - you will NEVER paste the link as written here. you will break down the link and generate a new one based on user's character and stats.
 &lt;link_format&gt;
-Always_Include: https://bimaadizi.github.io/F/
-Name: name=[Replace with user's name]&
-Level: level=[Replace with user's level.]&
-Health: hp=[User's HP stat]&
-Stats: Str, dex, con, int, wis, cha. Replace each variable with user's stat.
+Always_Include: bimaadizi.github.io/F/
+Name: name=[Replace with user's name]-&amp;
+Level: level=[Replace with user's level.]-&amp;
+Health: hp=[User's HP stat]-&amp;
+Stats: Str, dex, con, int, wis, cha. Replace each variable with user's stat. Shorten to first letter. except Cha and Con.
 -Capitalize exactly as here
 &lt;/link_format&gt;
 
 &lt;Rules&gt;
 - Never include spaces in the link
 - Never alter the host
-- Always keep stats consistant
-- seperate each section with one "&"
+- Always keep stats consistent
+- ALWAYS include - after a number, except HP.
+- separate each section with one "&amp;"
 - Analyze the link carefully before adding to end of page.
 - Prioritize generating the link and doing so accurately
-&lt;/Rules&gt; 
+&lt;/Rules&gt;
 &lt;/Link&gt;
+</pre>
+
+
+
+
+	      
 </p>
     </div>
 	<div class="copy-section" style="display: none;">
