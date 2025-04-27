@@ -346,7 +346,7 @@ Think:
 				 If you are using Deepseek, it should be able to handle most of these prompts without issue while maintaining a decent memory. If you are paying for deepseek (Platform.Deepseek.com) do note that you are paying per token, and using a heavy system prompt will cost you more.
 				 <br><br>
 				 In the description of the Module I will try to explain how well it works, any potential dependencies, and an estimate of it's Tokens.
-				</p> m
+				</p> 
   
   <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
@@ -664,7 +664,8 @@ Heroic: 16-20
 	  <br>     → The numbers after your roll is the seed, this is included to force the AI to do the math instead of bypass it. If this stops being relatively consistent the module has broken.
 	  <br>     → Advantage rolls are IMPOSSIBLE, since both die would be the same.
 	  <br>     → Diversifying the opening and/or closing line of your prompt can prevent repeated results, it shouldn't be a big deal unless you always open and end with the same 2/3 words since the entropy can vary even if the number is relatively close. Alternatively, you can add a line saying '- Exclude common/repeated words when solving for X'.
-	  <br><br> Anyways. Give me feedback on this prompt if you use it, it's a bit experimental but I've seen success in my tests.
+	  <br>     → Blocking providers for Deepseek can impact results.
+	<br><br> Anyways. Give me feedback on this prompt if you use it, it's a bit experimental but I've seen success in my tests.
 	  <br><br>
 	  <br>-> This module is referenced in: [HEALTH], [COMBAT], [STATS]
 	      <br><span style="color: purple; font-weight: bold;">TOKEN COUNT (ESTIMATE) DEEPSEEK: [~261 TOKENS]</span>
@@ -770,7 +771,7 @@ Heroic: 16-20
 
 	      	        <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
-    <span style="font-weight: bold;">LEVELS</span>      <span>▼</span>
+    <span style="font-weight: bold;">STATS</span>      <span>▼</span>
     </div>
     <div class="section1" style="display: none;">
       <p>Incorporates Stats mechanics, and D20 Modifiers. Not recommended for JLLM, prone to issues on Deepseek due to how much it's asking to include and update.
@@ -871,6 +872,117 @@ Write engaging and dynamic fight scenes. The GameMaster handles the enemy's acti
 		</button>
 	</div>
 	</div>
+	
+		<!-- EXPERIMENTAL MODULES -->
+	
+		<h3> <span style="color: Red; font-weight: bold;">EXPERIMENTAL PROMPTS!!!!</span> </h3>
+<p> The following modules are things I have been experimenting with that are experiment with features I find really cool and have huge potential, but haven't quite tested thoroughly.
+		  
+
+
+	
+				      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="color: Red; font-weight: bold;">UI</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>        This system prompt gives you a Character Card for your character, unfortunately there is no way to embed these features into Janitor AI (Unless I generated them as PNGs, but that would require 67 MILLION PNGS or a bloated UI using multiple PNGs (It doesn't look good trust me))
+	  <br><br> On my github, I have hosted a character card generator. At the end of the AI's message, it will generate a link to my github page that corresponds to your name, race, stats, level, health (If you don't have all of these modules on, that's okay! It adjusts dynamically.) In addition to tracking your stats it comes with 930 Portraits that you can select to represent you, which I got from the Baldur's Gates "Portraits Portraits Everywhere!" mod.
+	  <br><br> This does not really serve that much of a purpose beyond being very cool. Everything it tracks is already tracked somewhere in the bot. At best it might give you an easy way to see your information formatted.
+	  <br><br> This does NOT update automatically. The AI will re-generate this link at the end of every message. If you are on mobile, this probably isn't worth opening in a new tab, but if you are on desktop then it is very cool to open up your character card and have it update live. Especially if you have multiple monitors.
+	  <br><br> Despite it's lack of practical utility, I'm extremely fond of this! I think it's an amazing touch! You can also save your characters and load them later if you have multiple ongoing chats or return to an old one. This information is stored in your browsers cache, meaning if you clear your cache you lose your saves and have to reset your portrait (However, you can just re-imput your stats or re-click the link the AI generates.)
+	  <br><br> Below is an example of the 'UI'.
+	  
+	  <br> <a href="https://bimaadizi.github.io/F/?name=Bim&race=Dwarf&class=Fighter&level=3&hp=27&str=13&dex=16&con=14&int=12&wis=15&cha=11">See the page yourself here.</a> (Avatar is client-side but you can select your own)
+	  
+	  	  					<img src="UI.png" alt="UI example" style="width: 100%; height: auto; display: block;">
+	  <br><br> Things I'll have to experiment with are:
+	  <br><br> - How good is the AI at updating it over long sessions?
+	  <br>     - How prone is the AI to dropping it?
+	  <br>     - General UI design (custom fonts, scaling it's font size)
+	  <br>     - Import/Export feature?
+	  
+	  <br><br> This prompt is made with Deepseek R1 in mind. While nothing in it necessarily makes it exclusive to R1, I don't have faith in JLLM to update it constantly and V3 might not have the reasoning to reason out the link. Feel free to try it with V3 or Janitor!
+	  <br><br> P.S, the module uses &lt;XML&gt; tags to give it priority when the AI is parsing the message. This is fully compatible with the above modules.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+      <p> #Link
+&lt;Link&gt;
+- At the end of all messages you will add a link. Here is a template:
+https://bimaadizi.github.io/F/?name=Joe&race=Human&class=Fighter&level=1&hp=100&str=7&dex=7&con=7&int=7&wis=7&cha=7
+- you will NEVER paste the link as written here. you will break down the link and generate a new one based on user's character and stats.
+&lt;link_format&gt;
+Always_Include: https://bimaadizi.github.io/F/
+Name: name=[Replace with user's name]&
+Level: level=[Replace with user's level.]&
+Health: hp=[User's HP stat]&
+Stats: Str, dex, con, int, wis, cha. Replace each variable with user's stat.
+-Capitalize exactly as here
+&lt;/link_format&gt;
+
+&lt;Rules&gt;
+- Never include spaces in the link
+- Never alter the host
+- Always keep stats consistant
+- seperate each section with one "&"
+- Analyze the link carefully before adding to end of page.
+- Prioritize generating the link and doing so accurately
+&lt;/Rules&gt; 
+&lt;/Link&gt;
+</p>
+    </div>
+	<div class="copy-section" style="display: none;">
+		<button class="copy-btn" onclick="copySection(this)">
+			<img src="copy.png" alt="Copy Button" style="max-height: 120px;">
+		</button>
+	</div>
+	</div>
+	
+	
+		      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="color: Red; font-weight: bold;">Hidden Text/Embedding</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p> This prompt could have so many uses - and I am very interested in employing it. This prompt is vague and does not have a specified purpose, you'll have to add that.
+	  <br><br> essentially what it does is it embeds an image that is 1x1 pixels (Even with media library disabled this works btw). This makes it so it's invisible to the user in the final text and can be used to nest details inside of it.
+	  <br><br> one drawback of it is that you can still see the text while it's generating - but if you're using deepseek R1, take advantage of it's multilingualism. Instruct it to generate the text in the embedder in Mandarin or a language you can't read (I believe mandarin is very token efficient). Alternatively you can turn off text streaming or not look at the generation.
+	  <br><br> One of the uses I can think of is having an overarching developing plot, AI does not have foresight, it wings it right then and there when it generates the message. With the embedder you can have the AI install an overarching plot and fit the world into the larger narrative.
+	  <br><br> Another use is that you can have is to track internal thoughts of NPCs, giving them a more dynamic personality. Typically the AI doesn't consider this because they do not write the internal thoughts because the user can not experience them. But with the embedder you can have your companions actively develop beyond what is written, an NPC who is consciously lying to you, or has a dark secret related to the plot.
+	  <br><br> You could use it to track memory and key details but that might get token inefficient
+	  <br><br> In some bots (Not really this one, unless you decide to!) you could have stats that is hidden from the user that develops over time based on interactions, like perhaps 'madness'.
+	  <br><br> In roleplay bots you could store a relationship matrix in there, but that's highly token inefficient and the AI is always eager to update it too much.
+	  <br><br> You can have contingency plans where maybe the AI can plan for certain actions of the user.
+	  <br><br><br><br> You will have to modify the prompt yourself, but I think it can introduce a really interesting dynamic in many roleplays. I would love to hear how you utilized this prompt. It is still not thoroughly tested, but I figured I'd put it out there.
+	  <br><br> Proxy is recommended, but I think V3 should be able to handle it. Feels too complex for JLLM.
+	  
+	  
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+      <p>## Formatting
+	  
+### Rules:
+- Asterisks around narration (*Narration*)
+- Quotation marks around dialogue (“Dialogue”)
+- No Formatting for elements unrelated to above
+- Bold key elements for artistic flavor using double asterisks (**bold**)
+- Do not include (OOC:) or break from the roleplay</p>
+    </div>
+	<div class="copy-section" style="display: none;">
+		<button class="copy-btn" onclick="copySection(this)">
+			<img src="copy.png" alt="Copy Button" style="max-height: 120px;">
+		</button>
+	</div>
+	</div>
+
+	
+	
+
+	
+	
+	
 <!-- Segments -->
 					        <section id="Segments">
 							
@@ -1125,7 +1237,7 @@ Write engaging and dynamic fight scenes. The GameMaster handles the enemy's acti
 	</div>
 	
 											<h2> Dialogue </h2>
-							<h3> Place Dialogue underneath the '## Details: section..</h3>
+							<h3> Place Dialogue underneath the '## Details:' section.</h3>
 							
 										      	        <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
@@ -1189,7 +1301,12 @@ Write engaging and dynamic fight scenes. The GameMaster handles the enemy's acti
 		</button>
 	</div>
 	</div>
-							
+	
+		
+	
+	
+	
+	<!-- Personer -->						
 					        <section id="Persona">
 							
 								<img src="Persona.png" alt="Persona" class="image">
@@ -1295,7 +1412,7 @@ Alignment= (Optional, alignment isn't as relevant as it used to be and can box y
     </div>
 <div class="copy-section">
   <button class="copy-btn" onclick="copySection(this)">
-    <img src="copy2.png" alt="Copy Button" style="max-height: 120px;">
+    <img src="copy3.png" alt="Copy Button" style="max-height: 120px;">
   </button>
 </div>
 </div>
@@ -1407,6 +1524,24 @@ Alignment= (Optional, alignment isn't as relevant as it used to be and can box y
     </div>
 </div>
 
+
+	      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">Michael Kirkbride</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of a Michael Kirkbride) at the end of my message.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+
+
+					<img src="KirkbrideExample.png" alt="Kindergartener example" style="width: 100%; height: auto; display: block;">
+
+    </div>
+</div>
+
+
 	      	        <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
     <span style="font-weight: bold;">Ed Greenwood</span>      <span>▼</span>
@@ -1441,16 +1576,16 @@ Alignment= (Optional, alignment isn't as relevant as it used to be and can box y
 
 	      	        <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
-    <span style="font-weight: bold;">Michael Kirkbride</span>      <span>▼</span>
+    <span style="font-weight: bold;">Yukio Mishima</span>      <span>▼</span>
     </div>
     <div class="section1" style="display: none;">
-      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of a Michael Kirkbride) at the end of my message.
+      <p>Deepseek R1, default system prompt, with (OOC: Mimic the Writing style of a Yukio Mishima) at the end of my message.
 	  </p>
     </div>
     <div class="section2" style="display: none;">
 
 
-					<img src="KirkbrideExample.png" alt="Kindergartener example" style="width: 100%; height: auto; display: block;">
+					<img src="MishimaExample.png" alt="Kindergartener example" style="width: 100%; height: auto; display: block;">
 
     </div>
 </div>
