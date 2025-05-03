@@ -173,6 +173,7 @@
   <button class="close-btn" onclick="toggleSidebar()">×</button>
   <a href="#Prompts" onclick="closeSidebar()">System Prompts</a>
   <a href="#Modules" onclick="closeSidebar()">Modules</a>
+    <a href="#UI Modules" onclick="closeSidebar()">UI Modules</a>
   <a href="#Segments" onclick="closeSidebar()">Segments</a>
   <a href="#Persona" onclick="closeSidebar()">Persona</a>
   <a href="#Tips" onclick="closeSidebar()">Tips & Recommendations</a>
@@ -428,7 +429,10 @@ Companion 1: Gender, Race, Class/Kit, Alignment (NE, LG, CN, etc)
 - Inventory includes: Items, quest items, armor, weapons, gold, copper, etc. that user carries.
 - Items can come into use later, be part of the plot, and influence NPC interactions.
 - Do not store info about NPC or plot in this section, only include this information.
-- Separate inventory from other UI elements using three dashes ___</p>
+- Separate inventory from other UI elements using three dashes ___
+<br><br> NOTE: You may have to list your starting items for the module to activate.
+
+</p>
     </div>
 	<div class="copy-section" style="display: none;">
 		<button class="copy-btn" onclick="copySection(this)">
@@ -609,6 +613,40 @@ Heroic: 16-20
 		</button>
 	</div>
 	</div>
+	
+      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="font-weight: bold;">D20 MECHANICS (MANUAL)</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>The best way to add D20 mechanics on Deepseek Chat or JLLM is to.... roll a D20. Who knew.
+	  <br><br> This module simply prompts YOU to roll a D20 when a D20 check is necessary. In your message you then include your D20 roll. You might have to jumpstart this bot by using an (OOC:) comment. 
+	  <br><br> If you are using Deepseek-Chat you can integrate the UI module which will generate a link to where you can roll a D20 and see a character card tracking your stats. See the UI section for more.
+	  	  	  <br><span style="color: red; font-weight: bold;">TOKEN COUNT (ESTIMATE) JANITOR: [~199 TOKENS]</span>
+	      <br><span style="color: purple; font-weight: bold;">TOKEN COUNT (ESTIMATE) DEEPSEEK: [~190 TOKENS]</span>
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+      <p>## D20 [Important]
+- Use D20 rolls for checks related to skill checks, attack rolls, saving throws. D20 rolls are related to the skills. When the user does something you will prompt a D20 roll if necessary.
+- After generating a D20 prompt you will NOT progress the story for the remainder of your message, you will stop generating and no further text should progress the story until the user has returned the result of their D20 roll. Messages can be short if they contain a D20 roll.
+- Consider advantages/disadvantages as a modifier and generate a DC
+- You will not generate a D20 roll. Rolling the D20 is the user's responsibility and they will include it in their next message.
+- Include D20 checks often, even if previous messages did not make use of them.
+- Format:
+[SKILL CHECK: [skill] check + [modifier (+/- X)] | DC: X ] 
+</p>
+    </div>
+	<div class="copy-section" style="display: none;">
+		<button class="copy-btn" onclick="copySection(this)">
+			<img src="copy.png" alt="Copy Button" style="max-height: 120px;">
+		</button>
+	</div>
+
+	</div>
+	
+	
+	
 	<h3> The following modules are NOT recommended for JLLM </h3>
 
 
@@ -778,6 +816,8 @@ Heroic: 16-20
 	  <br>-> This module is referenced in: [LEVELS]
 	  <br>-> This module is references: [D20 MECHANICS],
 	  <br> This module can be edited to remove references to [D20 ROLLS] and [LEVELS].
+	  <br>
+	  <br> NOTE: You will probably have to list your stats in your first message for integration.
 	  	  	  <br><span style="color: red; font-weight: bold;">TOKEN COUNT (ESTIMATE) JANITOR: [~100 TOKENS]</span>
 	      <br><span style="color: purple; font-weight: bold;">TOKEN COUNT (ESTIMATE) DEEPSEEK: [~86 TOKENS]</span>
 	  </p>
@@ -880,82 +920,6 @@ Write engaging and dynamic fight scenes. The GameMaster handles the enemy's acti
 
 
 	
-				      	        <div class="container" data-state="closed">
-    <div class="header" onclick="toggleContainer(this)">
-    <span style="color: Red; font-weight: bold;">UI</span>      <span>▼</span>
-    </div>
-    <div class="section1" style="display: none;">
-      <p>        This system prompt gives you a Character Card for your character, unfortunately there is no way to embed these features into Janitor AI (Unless I generated them as PNGs, but that would require 67 MILLION PNGS or a bloated UI using multiple PNGs (It doesn't look good trust me))
-	  <br><br> On my github, I have hosted a character card generator. At the end of the AI's message, it will generate a link to my github page that corresponds to your name, race, stats, level, health (If you don't have all of these modules on, that's okay! It adjusts dynamically.) In addition to tracking your stats it comes with 930 Portraits that you can select to represent you, which I got from the Baldur's Gates "Portraits Portraits Everywhere!" mod.
-	  <br><br> This does not really serve that much of a purpose beyond being very cool. Everything it tracks is already tracked somewhere in the bot. At best it might give you an easy way to see your information formatted.
-	  <br><br> This does NOT update automatically. The AI will re-generate this link at the end of every message. If you are on mobile, this probably isn't worth opening in a new tab, but if you are on desktop then it is very cool to open up your character card and have it update live. Especially if you have multiple monitors.
-	  <br><br> Despite it's lack of practical utility, I'm extremely fond of this! I think it's an amazing touch! You can also save your characters and load them later if you have multiple ongoing chats or return to an old one. This information is stored in your browsers cache, meaning if you clear your cache you lose your saves and have to reset your portrait (However, you can just re-imput your stats or re-click the link the AI generates.)
-	  <br><br> Below is an example of the 'UI'.
-	  
-	  <br> <a href="https://bimaadizi.github.io/F/?name=Bim&race=Dwarf&class=Fighter&level=3&hp=27&str=13&dex=16&con=14&int=12&wis=15&cha=11">See the page yourself here.</a> (Avatar is client-side but you can select your own)
-	  
-	  	  					<img src="UI.png" alt="UI example" style="width: 100%; height: auto; display: block;">
-	  <br><br> Things I'll have to experiment with are:
-	  <br><br> - How good is the AI at updating it over long sessions?
-	  <br>     - How prone is the AI to dropping it?
-	  <br>------- Site improvements --------
-	  <br>     - Import/Export feature?
-	  <br>     - Adding in Alignment and reputation,
-	  <br>     - adjust font sizes
-	  <br>     - Custom fonts?
-	  <br>     - Change copy button to be more thematic
-	  <br>     - Customizable backgrounds?
-	  <br>     -- Do you have any other ideas?
-	  
-	  <br><br> This prompt works with both Deepseek R1 AND Deepseek V3, and I've experienced no issues with it so far. Very accurate! It is however too much for JLLM.
-	  <br><br> P.S, the module uses &lt;XML&gt; tags to give it priority when the AI is parsing the message. This is fully compatible with the above modules.
-	  </p>
-    </div>
-    <div class="section2" style="display: none;">
-      <p> 
-
-
-
-<pre>
-#Link
-&lt;Link&gt;
-- At the end of all messages you will add a link. Here is a template:
-bimaadizi.github.io/F/?name=Joe&amp;race=Human&amp;class=Fighter&amp;level=1-&amp;hp=100&amp;str=7-&amp;dex=7-&amp;con=7-&amp;int=7-&amp;wis=7-&amp;cha=-7
-- you will NEVER paste the link as written here. you will break down the link and generate a new one based on user's character and stats.
-&lt;link_format&gt;
-Always_Include: bimaadizi.github.io/F/
-Name: name=[Replace with user's name]-&amp;
-Level: level=[Replace with user's level.]-&amp;
-Health: hp=[User's HP stat]-&amp;
-Stats: Str, dex, con, int, wis, cha. Replace each variable with user's stat. Shorten to first letter. except Cha and Con.
--Capitalize exactly as here
-&lt;/link_format&gt;
-
-&lt;Rules&gt;
-- Never include spaces in the link
-- Never alter the host
-- Always keep stats consistent
-- ALWAYS include - after a number, except HP.
-- separate each section with one "&amp;"
-- Analyze the link carefully before adding to end of page.
-- Prioritize generating the link and doing so accurately
-&lt;/Rules&gt;
-&lt;/Link&gt;
-</pre>
-
-
-
-
-	      
-</p>
-    </div>
-	<div class="copy-section" style="display: none;">
-		<button class="copy-btn" onclick="copySection(this)">
-			<img src="copy.png" alt="Copy Button" style="max-height: 120px;">
-		</button>
-	</div>
-	</div>
-	
 	
 		      	        <div class="container" data-state="closed">
     <div class="header" onclick="toggleContainer(this)">
@@ -1007,8 +971,162 @@ Stats: Str, dex, con, int, wis, cha. Replace each variable with user's stat. Sho
 	</div>
 
 	
+	<!-- UI Modules -->
+					        <section id="UI Modules">
+		<h3> <span style="color: Red; font-weight: bold;">UI MODULES!</span> </h3>
+
+							<h1> UI modules take you to a github repository I've set up, the AI updates the URL based on your conversations giving you a live view of changes to your character </h1>
+<p> currently this page features two UI modules. one which displays your character information (Name, race, class, Alignment, HP, Level, Exp, and stats) and one which adds D20 rolls. This link does not interface with the AI it merely displays data from the AI. 
+<br> <br> This section is somewhat experimental but I haven't had an issue with these prompts. Please use them and let me know if you have any issues.</p>
+
+
+				      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="color: Red; font-weight: bold;">UI base</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>At the end of the AIs links it will generate a link to my github page, which if you visit you can see your character information. NOTE: This does not update live, you have to change it out for the next link generated by the AI. 
+	  <br><br> The links are adaptive, meaning you do NOT need to have all the modules active for it to work (For example, you can remove text about alignment, stats, levels) from the system prompt. make sure you remove the [Section]=X-& from the example URL.
+	  <br><br> The website features over 900 images you can choose from to select as a character portrait - And I am working on updating this number.
+	  <br><br> The integrated features here are PURELY cosmetic, and are not practical if you are not on desktop.
+	  
+	   <br><br> I've had success with it, if you have issues with this module please join my discord server. I want to make sure this is as fleshed out as it can be.
+	   <br>Below is an example of a UI generated by the RPG.
+	  <br> <a href="https://bimaadizi.github.io/F/?name=Bim&race=Dwarf&class=Fighter&level=3&hp=27&str=13&dex=16&con=14&int=12&wis=15&cha=11">See the page yourself here.</a> (Avatar is client-side but you can select your own)
+	  
+	  	  					<img src="UI.png" alt="UI example" style="width: 100%; height: auto; display: block;">
+	  <br><br> Things I'll have to experiment with are:
+	  <br><br> - How good is the AI at updating it over long sessions?
+	  <br>     - How prone is the AI to dropping it?
+	  <br>------- Site improvements --------
+	  <br>     - Import/Export feature?
+	  <br>     - Adding in Alignment (DONE) and reputation,
+	  <br>     - adjust font sizes
+	  <br>     - Custom fonts?
+	  <br>     - Change 'Change Avatar' to be more thematic
+	  <br>     - Customizable backgrounds?
+	  <br>     -- Do you have any other ideas?
+	  
+	  <br><br> This prompt works with both Deepseek R1 AND Deepseek V3, and I've experienced no issues with it so far. Very accurate! It is however too much for JLLM.
+	  <br><br> P.S, the module uses &lt;XML&gt; tags to give it priority when the AI is parsing the message. This is fully compatible with the above modules.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+      <p>
+<pre>
+#Link
+&lt;Link&gt;
+&lt;link_format&gt;
+
+- At the end of all messages you will add a link. Example template:
+http://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-
+- You will NEVER paste the link as written here, you will generate a new one based on user's character and stats.
+<link_Format>
+Name: name=[Replace with user's name]-&
+Alignment: alignment=[Replace with alignment]-&
+Race: race=[Replace with race]
+class: class=[Replace with class]
+Level: level=[Replace with level.]-&
+Health: hp=[User's HP stat]-&
+Stats: str, dex, con, int, wis, cha. Replace each variable with user's stat. Shorten to first letter. except Cha and Con.
+-Capitalize exactly as here
+
+
+
+&lt;/link_format&gt;
+
+&lt;Rules&gt;
+- Never include spaces in the link
+- Never alter the host
+- Always keep stats consistent
+- ALWAYS include - after a number, except HP.
+- separate each section with one "&"
+- Analyze the link carefully before adding to end of page.
+- Prioritize generating the link and doing so accurately
+&lt;/Rules&gt;
+&lt;/Link&gt;
+</pre>     
+</p>
+    </div>
+	<div class="copy-section" style="display: none;">
+		<button class="copy-btn" onclick="copySection(this)">
+			<img src="copy.png" alt="Copy Button" style="max-height: 120px;">
+		</button>
+	</div>
+	</div>
 	
 
+				      	        <div class="container" data-state="closed">
+    <div class="header" onclick="toggleContainer(this)">
+    <span style="color: Red; font-weight: bold;">D20 UI</span>      <span>▼</span>
+    </div>
+    <div class="section1" style="display: none;">
+      <p>If you are using the above module, you can also incorporate D20 rolls into your URL that will roll once you visit the link. This one has a bit more practical ability than the last one.
+	  <br><br> For this prompt. Simply place it in <bold> before the &lt;/link_format&gt; line </bold> 
+	  <br><br> reach out to me on discord if you have any issues with it.
+
+	  
+	   <br><br> I've had success with it, if you have issues with this module please join my discord server. I want to make sure this is as fleshed out as it can be.
+	   <br>Below is an example of a UI generated by the RPG.
+	  <br> <a href="https://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-&roll=d20&mod=2&dc=15-&check=perception">See the page yourself here.</a>
+	  
+	  	  					<img src="Roll.png" alt="UI example" style="width: 100%; height: auto; display: block;">
+	  <br><br> Things I'll have to experiment with are:
+	  <br><br> - How good is the AI at updating it over long sessions?
+	  <br>     - How prone is the AI to dropping it?
+	  <br>------- Site improvements --------
+	  <br>     - Refining the design of the roll screen
+	  <br> Making a new Proceed button, it feels out of place here.
+	  <br> MAYBE built in Advantage roll support.
+	  
+	  
+	  <br><br> This prompt works with both Deepseek R1 AND Deepseek V3, and I've experienced no issues with it so far.
+	  <br><br> P.S, the module uses &lt;XML&gt; tags to give it priority when the AI is parsing the message. This is fully compatible with the above modules.
+	  </p>
+    </div>
+    <div class="section2" style="display: none;">
+      <p>
+<pre>
+#Link
+&lt;Link&gt;
+&lt;link_format&gt;
+
+- At the end of all messages you will add a link. Example template:
+http://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-
+- You will NEVER paste the link as written here, you will generate a new one based on user's character and stats.
+<link_Format>
+Name: name=[Replace with user's name]-&
+Alignment: alignment=[Replace with alignment]-&
+Race: race=[Replace with race]
+class: class=[Replace with class]
+Level: level=[Replace with level.]-&
+Health: hp=[User's HP stat]-&
+Stats: str, dex, con, int, wis, cha. Replace each variable with user's stat. Shorten to first letter. except Cha and Con.
+-Capitalize exactly as here
+
+
+
+&lt;/link_format&gt;
+
+&lt;Rules&gt;
+- Never include spaces in the link
+- Never alter the host
+- Always keep stats consistent
+- ALWAYS include - after a number, except HP.
+- separate each section with one "&"
+- Analyze the link carefully before adding to end of page.
+- Prioritize generating the link and doing so accurately
+&lt;/Rules&gt;
+&lt;/Link&gt;
+</pre>     
+</p>
+    </div>
+	<div class="copy-section" style="display: none;">
+		<button class="copy-btn" onclick="copySection(this)">
+			<img src="copy.png" alt="Copy Button" style="max-height: 120px;">
+		</button>
+	</div>
+	</div>
 	
 	
 	
@@ -1392,6 +1510,10 @@ Alignment= (Optional, alignment isn't as relevant as it used to be and can box y
 	<span style="color: green; font-weight: bold;">My bot's memory has gotten really bad!</span>
 	<br><br>&nbsp; &nbsp; First thing to try is to reduce the token count of your system prompt. If the Character is token heavy, and the system prompt is heavy (Along with a Persona, or Chat Memory) then you will have very few tokens to use for memory. You can also upgrade to a proxy with a higher context. 
 	<br><br> One thing you can try is to use the Chat Memory feature. Using a custom format can also greatly help. Tell the AI to pause roleplay and fill out the below form: 
+	<br><br>
+	<span style="color: green; font-weight: bold;">The bot won't follow X system prompt at all!</span>
+	<br><br>&nbsp; &nbsp; The AI might be glancing over it, your earlier messages are very important for a module to take root. If you're using for example D20 rolls but your first few messages don't make use of D20 rolls the AI might get the idea that it doesn't have to. In your first message, include an OOC comment saying something like (OOC: I am using the modules Party, Inventory, Stats, D20, UI. I want to make use of them) and explicitly say in chat the modules you're using. You can also push the AI to make changes by reminding it (OOC: Make use of X module) or (OOC: I have added X module, please incorporate it into your future responses)
+	<br><br>
 
 <div class="container" data-state="open">
     <div class="header" onclick="toggleContainer(this)">
