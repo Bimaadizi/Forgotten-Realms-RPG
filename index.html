@@ -1087,37 +1087,17 @@ Stats: str, dex, con, int, wis, cha. Replace each variable with user's stat. Sho
     <div class="section2" style="display: none;">
       <p>
 <pre>
-#Link
-&lt;Link&gt;
-&lt;link_format&gt;
-
-- At the end of all messages you will add a link. Example template:
-http://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-
-- You will NEVER paste the link as written here, you will generate a new one based on user's character and stats.
-<link_Format>
-Name: name=[Replace with user's name]-&
-Alignment: alignment=[Replace with alignment]-&
-Race: race=[Replace with race]
-class: class=[Replace with class]
-Level: level=[Replace with level.]-&
-Health: hp=[User's HP stat]-&
-Stats: str, dex, con, int, wis, cha. Replace each variable with user's stat. Shorten to first letter. except Cha and Con.
--Capitalize exactly as here
-
-
-
-&lt;/link_format&gt;
-
-&lt;Rules&gt;
-- Never include spaces in the link
-- Never alter the host
-- Always keep stats consistent
-- ALWAYS include - after a number, except HP.
-- separate each section with one "&"
-- Analyze the link carefully before adding to end of page.
-- Prioritize generating the link and doing so accurately
-&lt;/Rules&gt;
-&lt;/Link&gt;
+&lt;D20_Rolls&gt;
+- If the user should roll a D20, add this to end of URL:
+&roll=d20&mod=2&dc=15-&check=perception
+- &roll=d20 : enables D20 roll
+- &mod= : Modifier, (+X/-X)
+- dc= : Difficulty class of dice roll
+- check= : type of check
+Ex: 
+http://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-&roll=d20&mod=2&dc=15-&check=perception
+- Only include this to end of link if user is prompted at end of message.
+&lt;/D20_Rolls&gt;
 </pre>     
 </p>
     </div>
