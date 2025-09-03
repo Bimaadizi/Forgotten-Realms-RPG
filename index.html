@@ -261,6 +261,23 @@
   .forgotten-realms-btn:hover {
     background-color: #5c0000; /* Darker red on hover */
   }
+  
+     .Sanguis-btn {
+    display: block;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: black; /* Dark red */
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .Sanguis-btn:hover {
+    background-color: #5c0000; /* Darker red on hover */
+  }
   </style>
 </head>
 <body>
@@ -280,6 +297,9 @@
 <br><br><br>
   <a href="https://discord.gg/yMx6j79yez" target="_blank" class="discord-btn">Discord</a>
     <a href="https://janitorai.com/characters/db8c8b62-83f0-4aca-9301-7829b579060e_character-%F0%9F%8F%B0-forgotten-realms-rpg-%F0%9F%90%89" target="_blank" class="forgotten-realms-btn">Forgotten Realms RPG</a>
+<p> More Modules: </p>
+    <a href="https://bimaadizi.github.io/Sanguis/" target="_blank" class="Sanguis-btn">Vampire Prompts</a>
+
 </div>
 
 <div class="main" id="mainContent">
@@ -1576,6 +1596,9 @@ Greataxe, Spells (e.g witch bolt, chaos bolt), Hit die (Barbarian), Critical Hit
         <button class="copy-button" onclick="copyText('grognard2')">Copy</button>
       </div>
     </div>
+	
+
+	
   </div>
 
 
@@ -2440,11 +2463,82 @@ Examples: Monster Challenge Rating, stats, passive perception/insight of NPCs, b
 			</div>
 		  </div>
 		</div>
+
+<h2> UI Prompts </h2>
+<p> These are basic UI prompts, in which the end of each message links to a github page with your stats and/or a D20 roll. For a more advanced version of these modules, see the Chrome Extension page.
+
+<div class="dropdown">
+  <div class="dropdown-header" onclick="toggleDropdown(this)">🟥 UI base</div>
+  <div class="dropdown-content">
+    <p><strong>Description:</strong> This module generates a link to http://bimaadizi.github.io/F/, the URL will be appended with details, such as core character details, stats, levels, and HP, and features a selection of avatars.</p>
+	<p> This prompt simply re-iterates the details in the chat, and will need to be reloaded at the end of each message, it can be a nice visual but isn't practical. The D20 UI extension can add practical application for the URL. </p>
+	<p> This page does feature a portfolio of avatars that can be used to help visualize your character. </p>
+	<p> For a more updated version of the UI Prompt and more features, see the Chrome Extension page, which adds: Automatic updates, expanded avatar list, multiple layouts. This feature is depreciated and will not receive updates. </p>
+	
+	  <br> <a href="https://bimaadizi.github.io/F/?name=Bim&race=Dwarf&class=Fighter&level=3&hp=27&str=13&dex=16&con=14&int=12&wis=15&cha=11">See the page yourself here.</a> (Avatar is client-side but you can select your own)
+	  	  	  					<img src="UI.png" alt="UI example" style="width: 100%; height: auto; display: block;">
+    <pre id="ui-base"># Link
+&lt;Link&gt;
+&lt;link_format&gt;
+
+- At the end of all messages you will add a link. Example template:
+http://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-
+
+- You will NEVER paste the link as written here, you will generate a new one based on user's character and stats.
+
+&lt;link_Format&gt;
+Name: name=[Replace with user's name]-&
+Alignment: alignment=[Replace with alignment]-&
+Race: race=[Replace with race]
+class: class=[Replace with class]
+Level: level=[Replace with level.]-&
+Health: hp=[User's HP stat]-&
+Stats: str, dex, con, int, wis, cha. Replace each variable with user's stat. Shorten to first letter. except Cha and Con.
+-Capitalize exactly as here
+&lt;/link_format&gt;
+
+&lt;Rules&gt;
+- Never include spaces in the link
+- Never alter the host
+- Always keep stats consistent
+- ALWAYS include - after a number, except HP.
+- separate each section with one "&"
+- Analyze the link carefully before adding to end of page.
+- Prioritize generating the link and doing so accurately
+&lt;/Rules&gt;
+&lt;/Link&gt;</pre>
+    <button class="copy-button" onclick="copyText('ui-base')">Copy</button>
   </div>
+</div>
 
+<div class="dropdown">
+  <div class="dropdown-header" onclick="toggleDropdown(this)">🟥 D20 UI</div>
+  <div class="dropdown-content">
+    <p><strong>Description:</strong> Combine this module with the D20 module (Manual) to add true randomized D20 rolls to your roleplay. When a D20 roll is made, open up the link and it will prompt you to roll.</p>	
+	<p> This feature only adds basic D20 rolls, with difficulty class and mod. It does not support d4, d6, d8, d10, d12, multiple die, advantage/disadvantage. </p>
+	
+	<p> See the Chrome extension page for the new version of this system prompt, which adds: Automatic integration, Sound Effects, d4, d6, d8, d10, d12, multiple rolls, advantage, disadvantage, copying rolls</p>
+	<p> This version is depreciated and will not receive updates </p>
 
+    <pre id="d20-ui">&lt;D20_Rolls&gt;
+- If the user should roll a D20, add this to end of URL:
+&roll=d20&mod=2&dc=15-&check=perception
 
+- &roll=d20 : enables D20 roll
+- &mod= : Modifier, (+X/-X)
+- dc= : Difficulty class of dice roll
+- check= : type of check
 
+Ex: 
+http://bimaadizi.github.io/F/?name=Joe_Smith-&race=Mountain_Dwarf-&class=Fighter-&alignment=LG-&level=3-&exp=950-&hp=27-&str=13-&dex=16-&con=14-&int=12-&wis=15-&cha=11-&roll=d20&mod=2&dc=15-&check=perception
+
+- Only include this to end of link if user is prompted at end of message.
+&lt;/D20_Rolls&gt;</pre>
+    <button class="copy-button" onclick="copyText('d20-ui')">Copy</button>
+  </div>
+</div>
+
+  </div>
 
 
 
@@ -2731,7 +2825,7 @@ Examples: Monster Challenge Rating, stats, passive perception/insight of NPCs, b
 		  7. Maps: Will read map data created by Janitor AI and constantly display them using Emojis. The emoji has a large set of Emojis pre-built into it as well as support for the bot manually specifying emojis.
 		</p>
 		<p style="text-indent: 4em;">
-		  8. Sidebar & Settings: The sidebar is a malleable box that stores all of your modules allowing you to minimize and maximize them. It has a grid, vertical, and horizontal layout option. Without the sidebar, all of the active parts of your extension are stored on the left with a simple indicator. The sidebar also opens up the Settings tab which contains: Layouts (Ability to save and load UI elements), Sidebar background options, an alternative Icon set for the buttons, and an alternative AI that changes the appearance of your Janitor AI page.
+		  8. Sidebar & Settings: The sidebar is a malleable box that stores all of your modules allowing you to minimize and maximize them. It has a grid, vertical, and horizontal layout option. Without the sidebar, all of the active parts of your extension are stored on the left with a simple indicator. The sidebar also opens up the Settings tab which contains: Layouts (Ability to save and load UI elements), Sidebar background options, an alternative Icon set for the buttons, and an alternative UI that changes the appearance of your Janitor AI page.
 		</p>
 		<p> Since these modules parse your Janitor AI page for their information, they require specialized Modules to put in your system prompt. There are several quirks with Janitor that make them inconsistent, these will also be detailed on this page.
 		<br><br> All of these are saved specifically to your chat, so your avatar on one chat is not your avatar on another, 2 or more chats can have distinct spells, journals, and avatars making it easy to jump between multiple sessions.
@@ -2797,14 +2891,22 @@ Examples: Monster Challenge Rating, stats, passive perception/insight of NPCs, b
 <h1> How to Use </h1>
 <p> A quick guide on how to install and use the extension, video tutorial coming soon </p>
 		</p>
-		<p style="text-indent: 4em;">
-		  1. Download the extension from any of the above sources and unzip it.
-		  <br>
-		  2. Type in the URL bar 'Browser Name://extensions (i.e Chrome://extensions, Brave://extensions, Vivaldi://extensions, Edge://extensions) <br>
-		  3. On the screen (Usually top right corner) you will see a toggle called 'Developer Mode', enable Developer Mode.<br>
-		  4. Press 'Load unpacked' and navigate to where you downloaded the extension's content. <br>
-		  5. You should now have the Forgotten Realms RPG chrome extension, it's icon will simply be an F. You can now use it on Janitor AI, or wherever you use the bot.
-		</p>
+			<p style="text-indent:4em;">
+			  1. Download the extension from any of the above sources and unzip it.
+			</p>
+			<p style="text-indent:4em;">
+			  2. Type in the URL bar 'Browser Name://extensions (i.e Chrome://extensions, Brave://extensions, Vivaldi://extensions, Edge://extensions)
+			</p>
+			<p style="text-indent:4em;">
+			  3. On the screen (Usually top right corner) you will see a toggle called 'Developer Mode', enable Developer Mode.
+			</p>
+			<p style="text-indent:4em;">
+			  4. Press 'Load unpacked' and navigate to where you downloaded the extension's content.
+			</p>
+			<p style="text-indent:4em;">
+			  5. You should now have the Forgotten Realms RPG chrome extension, it's icon will simply be an F. You can now use it on Janitor AI, wherever you use the bot (provided it's in a browser environment), or on other bots!
+			</p>
+
 
 
 <h1> SYSTEM PROMPTS </h1>
